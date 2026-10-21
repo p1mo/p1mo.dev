@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p1mo.dev - portfolio</title>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="title">p<b>1</b>mo</span>
+        </header>
+        <main>
+
+            <div class="card">
+                <div class="details">
+                    <div class="vcard">
+                        <div class="item"><span class="pre-text">p1mo.dev<span>/name&nbsp;&nbsp;</span><b>$</b></span>Martin Bus, 34yo</div>
+                        <div class="item"><span class="pre-text">p1mo.dev<span>/from&nbsp;&nbsp;</span><b>$</b></span>Germany</div>
+                        <div class="item"><span class="pre-text">p1mo.dev<span>/role&nbsp;&nbsp;</span><b>$</b></span>Software Engineer</div>
+                        <div class="item"><span class="pre-text">p1mo.dev<span>/since&nbsp;</span><b>$</b></span>started ~2001</div>
+                        <div class="item"><span class="pre-text">p1mo.dev<span>/github</span><b>$</b></span><a href="https://github.com/p1mo" target="_blank">https://github.com/p1mo</a></div>
+                        <div class="item"><span class="pre-text">p1mo.dev<span>/coffee</span><b>$</b></span><a href="https://buymeacoffee.com/p1mo" target="_blank">https://buymeacoffee.com/p1mo</a></div>
+                        <div class="item"><span class="pre-text">p1mo.dev&nbsp;<b>$</b></span><b class="cursor">|</b></div>
+                    </div>
+                </div>
+                <div class="avatar">
+                    <img src="/assets/avatar.png" draggable="false">
+                    <span class="bubble de">
+                        <span class="inner">
+                            <span class="text">Deutsch</span>
+                            <i class="dot-1">&nbsp;</i>
+                            <i class="dot-2">&nbsp;</i>
+                        </span>
+                    </span>
+                    <span class="bubble en">
+                        <span class="inner">
+                            <span class="text">English</span>
+                            <i class="dot-1">&nbsp;</i>
+                            <i class="dot-2">&nbsp;</i>
+                        </span>
+                    </span>
+                    <span class="bubble pl">
+                        <span class="inner">
+                            <span class="text">Polski</span>
+                            <i class="dot-1">&nbsp;</i>
+                            <i class="dot-2">&nbsp;</i>
+                        </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="note">
+                Keep your code local — it pays rent there.
+                <br>
+                The cloud is just the vacation home: great for backup, terrible as your only address.
+            </div>
+
+            <div class="main-title"><span><div>p1mo.dev</div>$</span> Skillset</div>
+
+            <div class="skills">
+                <div data-select-group class="nav">
+                    {{#each skills}}
+                        <a data-selectable href="#" hx-get="/skill/{{this.uiid}}" hx-target="#skill_content">
+                            {{this.name}}
+                            <!--<div class="tags">
+                                {{#each this.tags}}
+                                    <span class="tag">{{this}}</span>
+                                {{/each}}
+                            </div>-->
+                        </a>
+                    {{/each}}
+                </div>
+                <div id="skill_content">{{pre_render}}</div>
+            </div>
+
+            <div class="main-title"><span><div>p1mo.dev</div>$</span> Brands</div>
+
+            <div class="brands">
+                <div class="main-brand">
+                    <div class="logo">{{{logos.vemox}}}</div>
+                    <div class="details">
+                        <div class="name">Vemox</div>
+                        <div class="desc">This brand is responsible for managing and overseeing the following brands:&nbsp; <b>blockz.dev</b>, <b>keoku.xyz</b>, <b>vexa.cx</b></div>
+                        <div class="info"><a href="https://vemox.de">vemox.de</a></div>
+                    </div>
+                </div>
+                <div class="lines">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <div class="sub-brands">
+                    <div class="company">
+                        <div class="title">
+                            <div class="logo">{{{logos.blockz}}}</div>
+                            <div class="name">BLOCKz</div>
+                        </div>
+                        <div class="desc">Tools, Services, IoT and Embedded focused.</div>
+                        <div class="site"><a href="https://blockz.dev">blockz.dev</a></div>
+                    </div>
+                    <div class="company">
+                        <div class="title">
+                            <div class="logo">{{{logos.keoku}}}</div>
+                            <div class="name">KEOKU</div>
+                        </div>
+                        <div class="desc">GPU Rendered UI & APP Framework</div>
+                        <div class="site"><a href="https://keoku.xyz">keoku.xyz</a></div>
+                    </div>
+                    <div class="company">
+                        <div class="title">
+                            <div class="logo">{{{logos.vexa}}}</div>
+                            <div class="name">VEXA</div>
+                        </div>
+                        <div class="desc">AI focused Services and Tools</div>
+                        <div class="site"><a href="https://vexa.cx">vexa.cx</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <footer>2026 &copy; by Martin Bus | {{version}}</footer>
+
+    <script src="/scripts/main.ts" type="module"></script>
+</body>
+</html>
