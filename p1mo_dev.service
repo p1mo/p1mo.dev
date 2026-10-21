@@ -1,0 +1,39 @@
+[Unit]
+Description=p1mo.dev Portfolio
+Documentation=https://github.com/p1mo/p1mo.dev
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=p1mo_dev
+Group=p1mo_dev
+
+# Working directory (important for relative paths)
+WorkingDirectory=/opt/p1modev
+
+# Command to run (use absolute paths!)
+ExecStart=/opt/p1modev/p1mo_dev
+
+# ---- Auto restart on error ----
+Restart=on-failure
+RestartSec=5s
+
+# Optional: give up after N restarts in a window (prevents crash loops)
+StartLimitBurst=5
+StartLimitIntervalSec=60
+
+# ---- Logging to journald ----
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=p1mo_dev
+
+# ---- Security hardening (recommended) ----
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/p1modev/temp
+
+[Install]
+WantedBy=multi-user.target

@@ -59,7 +59,7 @@ async fn main() -> anyhow::Result<()> {
     let arc_skills = parse_languages()?;
     let engine = engine::Engine::default()?;
 
-    let acceptor = TcpListener::new("0.0.0.0:2222").bind().await;
+    let acceptor = TcpListener::new("127.0.0.1:2222").bind().await;
 
     let router = Router::new()
         .hoop(affix_state::inject(engine))
