@@ -62,10 +62,10 @@ jobs:
           path: target/release/p1mo_dev
 
   release:
-    needs: build
+    needs: [bun-build, rust-build]
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Required to create tags and releases
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
