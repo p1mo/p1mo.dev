@@ -23,6 +23,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html, body {
+  touch-action: pan-x pan-y;   /* blocks pinch-zoom & double-tap zoom */
+  -webkit-text-size-adjust: 100%; /* stops iOS auto text inflation */
+  overscroll-behavior: none;
+}
 
 
 body {
@@ -77,11 +82,11 @@ main .note {
 }
 
 main .card {
-  @apply flex justify-center items-center w-full h-100;
+  @apply flex flex-col lg:flex-row justify-center items-center w-full h-auto lg:h-100;
 }
 
 main .card .details {
-  @apply flex flex-col justify-center w-[calc(100%-400px)] h-100;
+  @apply flex flex-col justify-center items-center lg:items-start w-full lg:w-[calc(100%-400px)] h-70 lg:h-100;
 }
 
 main .card .details .vcard {
@@ -195,12 +200,20 @@ main .card .avatar .bubble.pl .inner .dot-2 {
   @apply w-3 h-3 bottom-[calc(100%-1px)] left-[calc(100%+40px)];
 }
 
+
+
+
+
+
+
+
+
 main .skills {
   @apply flex flex-col w-full h-50 mb-3;
 }
 
 main .skills .nav {
-  @apply grid grid-cols-8 w-full h-10 bg-(--darkbg);
+  @apply grid grid-cols-4 lg:grid-cols-8 w-full h-20 lg:h-10 bg-(--darkbg);
   @apply border border-(--border) rounded-t-xl;
 }
 
@@ -236,6 +249,8 @@ main .skills #skill_content {
   @apply border-x border-b border-(--border) rounded-b-xl;
 }
 
+
+
 main .skills #skill_content.typing::after {
   content: '▍';
   margin-left: 1px;
@@ -243,6 +258,13 @@ main .skills #skill_content.typing::after {
 }
 
 @keyframes blink { 50% { opacity: 0; } }
+
+
+
+
+
+
+
 
 main .languages {
   @apply grid grid-cols-2 w-full gap-4;
@@ -301,11 +323,7 @@ main .brands .main-brand .details .name {
 }
 
 main .brands .main-brand .details .desc {
-  @apply flex justify-start items-center w-full h-10;
-}
-
-main .brands .main-brand .details .desc b {
-  @apply inline font-mono text-(--secondary) ml-1;
+  @apply flex justify-start items-center w-full h-10 whitespace-pre-wrap;
 }
 
 main .brands .main-brand .details .info {
@@ -316,13 +334,18 @@ main .brands .main-brand .details .info a {
   @apply text-base text-(--secondary) font-mono font-semibold hover:underline underline-offset-2;
 }
 
+main .brands .main-brand .details .info a .tag {
+  @apply text-xs text-(--primary) px-1 py-0.5 ml-3;
+  @apply border border-(--primary) rounded-xl drop-shadow-sm;
+}
+
 
 
 
 
 
 main .brands .lines {
-  @apply flex justify-around items-center w-full h-10;
+  @apply hidden lg:flex justify-around items-center w-full h-10;
 }
 
 main .brands .lines .line {
@@ -335,7 +358,7 @@ main .brands .lines .line {
 
 
 main .brands .sub-brands {
-  @apply grid grid-cols-3 w-full gap-4;
+  @apply grid grid-cols-1 lg:grid-cols-3 w-full gap-4;
 }
 
 main .brands .sub-brands .company {
@@ -373,6 +396,11 @@ main .brands .sub-brands .company .site {
 
 main .brands .sub-brands .company .site a {
   @apply hover:underline underline-offset-2;
+}
+
+main .brands .sub-brands .company .site a .tag {
+  @apply text-xs text-(--primary) px-1 py-0.5 ml-3;
+  @apply border border-(--primary) rounded-xl drop-shadow-sm;
 }
 
 
