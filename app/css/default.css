@@ -1,0 +1,29 @@
+:root {
+    --text: #000f1c;
+    --background: #aabdbf;
+
+    --code: #d4ebee;
+    --border: #b2c6c9;
+    --darkbg: #9fb1b3;
+
+    --primary: #73EC8B;
+    --secondary: #D2FF72;
+
+    --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #aabdbf;
+        --background: #000f1c;
+
+        --code: #003c70;
+        --border: #001a31;
+        --darkbg: #000c16;
+
+        --primary: #73EC8B;
+        --secondary: #D2FF72;
+
+        --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+    }
+}

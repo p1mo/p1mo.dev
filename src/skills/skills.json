@@ -1,0 +1,62 @@
+[
+    {
+        "uiid": "rust",
+        "name": "⭐ Rust",
+        "desc": "A fast, memory-safe systems language that uses ownership and compile-time borrow checking instead of a garbage collector, preventing data races and many memory bugs while keeping C/C++-level performance.",
+        "tags": [
+            "preferred"
+        ]
+    },
+    {
+        "uiid": "go",
+        "name": "⭐ Go (Golang)",
+        "desc": "A simple, compiled language designed for reliable and efficient software, with lightweight goroutines and channels making concurrency easy, plus fast builds and single-binary deployment.",
+        "tags": [
+            "preferred"
+        ]
+    },
+    {
+        "uiid": "zig",
+        "name": "Zig",
+        "desc": "An explicit systems language positioned as a modern C replacement, offering manual memory management, compile-time execution via comptime, no hidden control flow, and seamless C interoperability.",
+        "tags": []
+    },
+    {
+        "uiid": "js",
+        "name": "JavaScript",
+        "desc": "A dynamic, event-driven language with JIT execution, essential for the web browser and widely used on servers via Node.js, ideal for interactive UIs and async I/O.",
+        "tags": [
+            "it's a Scripting Language",
+            "use Go"
+        ]
+    },
+    {
+        "uiid": "ts",
+        "name": "TypeScript",
+        "desc": "A statically typed superset of JavaScript that compiles to plain JS, adding type checking and better tooling for large-scale applications while retaining JavaScript’s ecosystem and runtime behavior.",
+        "tags": [
+            "it's JavaScript"
+        ]
+    },
+    {
+        "uiid": "c",
+        "name": "C",
+        "desc": "A minimal, close-to-hardware procedural language with a simple mapping to machine code, still foundational for operating systems, embedded systems, and performance-critical libraries.",
+        "tags": []
+    },
+    {
+        "uiid": "cplus",
+        "name": "C++",
+        "desc": "An extension of C adding object-oriented, generic, and functional programming with zero-overhead abstractions, widely used for game engines, trading systems, and large high-performance software.",
+        "tags": []
+    },
+    {
+        "uiid": "php",
+        "name": "PHP",
+        "desc": "A dynamic, server-side scripting language built for the web, embedded directly in HTML and powering most CMS platforms; modern PHP 8 adds strong performance, a JIT, and type improvements while remaining easy to deploy on standard hosting.",
+        "tags": [
+            "it's a Scripting Language",
+            "started my journey"
+        ]
+    }
+]
