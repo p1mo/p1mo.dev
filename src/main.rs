@@ -6,16 +6,7 @@ mod github;
 mod skills;
 pub use skills::{parse_languages, Language, SkillsDepotExt};
 
-
-
-
 use salvo::{prelude::*, writing::Text::Plain};
-
-
-
-
-
-
 
 
 
@@ -34,21 +25,10 @@ async fn skill_finder(req: &mut Request, depot: &mut Depot, res: &mut Response) 
     Ok(())
 }
 
-
-
-
-
-
-
-
-
-
 #[handler]
 async fn home(depot: &mut Depot) -> Result<Text<String>, Error> {
 
     let get_skills = depot.list_skills();
-
-    
 
     Ok(Text::Html(depot.index(&serde_json::json!({
         "skills": get_skills,
@@ -61,12 +41,6 @@ async fn home(depot: &mut Depot) -> Result<Text<String>, Error> {
         "version": format!("v{}", env!("CARGO_PKG_VERSION")),
     }))?))
 }
-
-
-
-
-
-
 
 
 
@@ -110,11 +84,6 @@ async fn main() -> anyhow::Result<()> {
     Ok(())
 }
 
-
-
-
-
-
 async fn listen_shutdown_signal(handle: salvo::server::ServerHandle) {
     // Wait Shutdown Signal
     let ctrl_c = async {
@@ -127,7 +96,7 @@ async fn listen_shutdown_signal(handle: salvo::server::ServerHandle) {
     #[cfg(unix)]
     let terminate = async {
         // Handle SIGTERM on Unix systems
-        tokio::signal::unix::signal(signal::unix::SignalKind::terminate())
+        tokio::signal::unix::signal(tokio::signal::unix::SignalKind::terminate())
             .expect("failed to install signal handler")
             .recv()
             .await;
@@ -151,14 +120,6 @@ async fn listen_shutdown_signal(handle: salvo::server::ServerHandle) {
     // Graceful Shutdown Server
     handle.stop_graceful(None);
 }
-
-
-
-
-
-
-
-
 
 
 
