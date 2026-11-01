@@ -1,4 +1,4 @@
-use crate::{Error, EngineDepotExt, JsonDBDepotExt};
+use crate::{Error, EngineDepotExt, JsonDBDepotExt, Language};
 
 
 use salvo::prelude::*;
@@ -9,7 +9,7 @@ use salvo::prelude::*;
 #[handler]
 pub async fn init_default(depot: &mut Depot) -> Result<Text<String>, Error> {
 
-    let skill_list = depot.find_db::<Vec<crate::Language>>("skills.json").unwrap();
+    let skill_list = depot.find_db::<Vec<Language>>("skills.json").unwrap();
 
     let content = depot.template("home/base.hbs", serde_json::json!({
         "skill_list": skill_list,
