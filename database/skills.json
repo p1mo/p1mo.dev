@@ -1,6 +1,7 @@
 [
     {
         "uiid": "rust",
+        "icon": "<app-icon name=\"rust-lang\"></app-icon>",
         "name": "⭐ Rust",
         "desc": "A fast, memory-safe systems language that uses ownership and compile-time borrow checking instead of a garbage collector, preventing data races and many memory bugs while keeping C/C++-level performance.",
         "tags": [
@@ -9,7 +10,8 @@
     },
     {
         "uiid": "go",
-        "name": "⭐ Go (Golang)",
+        "icon": "<app-icon name=\"go-lang\"></app-icon>",
+        "name": "⭐ Go",
         "desc": "A simple, compiled language designed for reliable and efficient software, with lightweight goroutines and channels making concurrency easy, plus fast builds and single-binary deployment.",
         "tags": [
             "preferred"
@@ -17,12 +19,14 @@
     },
     {
         "uiid": "zig",
+        "icon": "<app-icon name=\"zig-lang\"></app-icon>",
         "name": "Zig",
         "desc": "An explicit systems language positioned as a modern C replacement, offering manual memory management, compile-time execution via comptime, no hidden control flow, and seamless C interoperability.",
         "tags": []
     },
     {
         "uiid": "js",
+        "icon": "<app-icon name=\"js-lang\"></app-icon>",
         "name": "JavaScript",
         "desc": "A dynamic, event-driven language with JIT execution, essential for the web browser and widely used on servers via Node.js, ideal for interactive UIs and async I/O.",
         "tags": [
@@ -32,6 +36,7 @@
     },
     {
         "uiid": "ts",
+        "icon": "<app-icon name=\"ts-lang\"></app-icon>",
         "name": "TypeScript",
         "desc": "A statically typed superset of JavaScript that compiles to plain JS, adding type checking and better tooling for large-scale applications while retaining JavaScript’s ecosystem and runtime behavior.",
         "tags": [
@@ -40,23 +45,40 @@
     },
     {
         "uiid": "c",
+        "icon": "<app-icon name=\"c-lang\"></app-icon>",
         "name": "C",
         "desc": "A minimal, close-to-hardware procedural language with a simple mapping to machine code, still foundational for operating systems, embedded systems, and performance-critical libraries.",
         "tags": []
     },
     {
         "uiid": "cplus",
+        "icon": "<app-icon name=\"cpp-lang\"></app-icon>",
         "name": "C++",
         "desc": "An extension of C adding object-oriented, generic, and functional programming with zero-overhead abstractions, widely used for game engines, trading systems, and large high-performance software.",
         "tags": []
     },
     {
         "uiid": "php",
+        "icon": "<app-icon name=\"php-lang\"></app-icon>",
         "name": "PHP",
         "desc": "A dynamic, server-side scripting language built for the web, embedded directly in HTML and powering most CMS platforms; modern PHP 8 adds strong performance, a JIT, and type improvements while remaining easy to deploy on standard hosting.",
         "tags": [
             "it's a Scripting Language",
             "started my journey"
         ]
+    },
+    {
+        "uiid": "kotlin",
+        "icon": "<app-icon name=\"kotlin-lang\"></app-icon>",
+        "name": "Kotlin",
+        "desc": "A concise, statically typed language by JetBrains that runs on the JVM and interoperates fully with Java, offering null safety, coroutines, and multiplatform support; it’s the preferred language for Android and increasingly used for backend and cross-platform development.",
+        "tags": []
+    },
+    {
+        "uiid": "swift",
+        "icon": "<app-icon name=\"swift-lang\"></app-icon>",
+        "name": "Swift",
+        "desc": "A fast, safe, and expressive compiled language by Apple with optionals, automatic reference counting, and protocol-oriented design; it’s the primary language for iOS, macOS, watchOS, and tvOS development via SwiftUI/UIKit, and also usable for server-side and cross-platform work.",
+        "tags": []
     }
 ]

@@ -1,0 +1,88 @@
+{
+  "$schema": "gen/uiicons.schema.json",
+  "component": {
+    "name": "ui-icon",
+    "icon": "home",
+    "size": "24px",
+    "kind": "fill"
+  },
+  "icons": {
+    "404": {
+      "source": "phosphor",
+      "icon": "image-broken"
+    },
+    "globe": {
+      "source": "phosphor",
+      "icon": "globe"
+    },
+    "egg": {
+      "source": "phosphor",
+      "icon": "egg-crack"
+    },
+    "bag": {
+      "source": "phosphor",
+      "icon": "bag"
+    },
+    "link": {
+      "source": "phosphor",
+      "icon": "arrow-square-out"
+    },
+    "at": {
+      "source": "phosphor",
+      "icon": "at"
+    },
+    "baby": {
+      "source": "phosphor",
+      "icon": "baby"
+    },
+    "baby-carriage": {
+      "source": "phosphor",
+      "icon": "baby-carriage"
+    },
+    "eye": {
+      "source": "phosphor",
+      "icon": "eye"
+    },
+
+    "rust-lang": {
+      "source": "simpleicons",
+      "icon": "rust"
+    },
+    "go-lang": {
+      "source": "simpleicons",
+      "icon": "go"
+    },
+    "zig-lang": {
+      "source": "simpleicons",
+      "icon": "zig"
+    },
+    "js-lang": {
+      "source": "simpleicons",
+      "icon": "javascript"
+    },
+    "ts-lang": {
+      "source": "simpleicons",
+      "icon": "typescript"
+    },
+    "c-lang": {
+      "source": "simpleicons",
+      "icon": "c"
+    },
+    "cpp-lang": {
+      "source": "simpleicons",
+      "icon": "cplusplus"
+    },
+    "php-lang": {
+      "source": "simpleicons",
+      "icon": "php"
+    },
+    "kotlin-lang": {
+      "source": "simpleicons",
+      "icon": "kotlin"
+    },
+    "swift-lang": {
+      "source": "simpleicons",
+      "icon": "swift"
+    }
+  }
+}

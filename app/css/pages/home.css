@@ -1,0 +1,136 @@
+.history-h1 {
+    font-family: var(--bungee);
+    @apply flex justify-center items-center w-full h-40;
+    @apply text-2xl font-normal text-(--primary);
+}
+
+
+
+
+.home-container {
+    @apply flex flex-col w-full min-h-100;
+}
+
+
+
+
+
+.home-container .heading {
+    @apply flex w-full justify-center items-center min-h-100 select-none;
+}
+
+.home-container .heading .info {
+    @apply flex flex-col justify-center items-center w-[90%] lg:w-[50%] min-h-100;
+}
+
+.home-container .heading .info .title {
+    font-family: var(--bungee);
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-4xl font-light text-(--primary);
+}
+
+.home-container .heading .info .sub {
+    font-family: var(--bungee);
+    @apply flex justify-center items-center w-full h-10;
+    @apply text-lg font-light text-(--secondary);
+}
+
+.home-container .heading .info .desc {
+    font-family: var(--robo-mono);
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-sm font-semibold;
+}
+
+.home-container .heading .image {
+    @apply hidden lg:flex justify-center items-center w-[50%] min-h-100;
+}
+
+.home-container .heading .image picture {
+    @apply w-100 h-100;
+}
+
+
+
+
+
+
+.home-container .skill-list {
+    @apply flex flex-col justify-start items-center w-full min-h-95 my-10 select-none;
+}
+
+.home-container .skill-list .title {
+    font-family: var(--bungee);
+    @apply flex justify-center items-center w-full h-30;
+    @apply text-lg font-semibold text-(--secondary);
+}
+
+.home-container .skill-list .items {
+    @apply grid grid-cols-3 lg:grid-cols-5 gap-5 w-full min-h-65 p-1;
+}
+
+.home-container .skill-list .items .item {
+    @apply flex flex-col justify-center items-center w-auto h-30 rounded-xl;
+    @apply bg-(--background-1) hover:bg-(--background-2) transition-colors;
+}
+
+.home-container .skill-list .items .item .name {
+    @apply flex justify-center items-center w-full h-5 mt-2;
+    @apply text-sm font-semibold text-(--secondary);
+}
+
+.home-container .skill-list .items .item .app-icon {
+    @apply w-10 h-10 text-(--primary);
+}
+
+
+
+
+
+
+
+.home-container .langs {
+    @apply flex flex-col justify-center items-center w-full h-100 my-10 lg:mt-30;
+}
+
+.home-container .langs .title {
+    font-family: var(--bungee);
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-lg font-semibold text-(--secondary);
+}
+
+.home-container .langs .image {
+    @apply flex justify-center items-center w-full h-auto text-(--primary);
+}
+
+.home-container .langs .image svg {
+    @apply w-full lg:w-[80%] h-auto;
+}
+
+
+
+
+
+
+.home-container .contact {
+    @apply flex flex-col justify-center items-center w-full h-50 my-10;
+}
+
+.home-container .contact .title {
+    font-family: var(--bungee);
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-lg font-semibold text-(--secondary);
+}
+
+.home-container .contact .text {
+    @apply text-xl font-semibold;
+    @apply flex justify-center items-center w-full h-30;
+}
+
+.home-container .contact .text .app-icon {
+    @apply mx-2 w-6 h-6 text-(--primary);
+}
+
+.home-container .contact .text a {
+    @apply text-(--primary) mx-2 px-5 py-2;
+    @apply bg-(--background-1) hover:bg-(--background-2) transition-all rounded-xl;
+}

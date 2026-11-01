@@ -1,3 +1,5 @@
+import "../components/icons.ts";
+
 import 'htmx.org';
 import { typeIn } from "./typers.ts";
 

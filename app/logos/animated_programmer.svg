@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc">
+
+  <defs>
+    <style>
+      :root { color-scheme: light; }
+      .line { fill: none; stroke: currentColor; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .screen { fill: none; stroke: currentColor; stroke-width: 4; stroke-linejoin: round; }
+      .code { fill: currentColor; opacity: .42; }
+      .code-dark { fill: currentColor; opacity: .72; }
+      .cursor { fill: currentColor; animation: blink 1.05s steps(2, start) infinite; }
+      .code-a { transform-box: fill-box; transform-origin: left center; animation: typeA 4.6s ease-in-out infinite; }
+      .code-b { transform-box: fill-box; transform-origin: left center; animation: typeB 5.2s ease-in-out infinite; }
+      .person { transform-box: view-box; transform-origin: 800px 460px; animation: breathe 4.8s ease-in-out infinite; }
+      .head { transform-box: view-box; transform-origin: 780px 245px; animation: head 4.8s ease-in-out infinite; }
+      @keyframes blink { 0%, 48% { opacity: 1; } 49%, 100% { opacity: 0; } }
+      @keyframes typeA { 0%, 12%, 100% { transform: scaleX(.92); opacity: .78; } 25%, 70% { transform: scaleX(1); opacity: 1; } }
+      @keyframes typeB { 0%, 18%, 100% { transform: scaleX(.88); opacity: .72; } 34%, 76% { transform: scaleX(1); opacity: 1; } }
+      @keyframes breathe { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2.4px); } }
+      @keyframes head { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-.45deg); } }
+      @media (prefers-reduced-motion: reduce) {
+        .cursor, .code-a, .code-b, .person, .head { animation: none !important; }
+      }
+    </style>
+    <mask id="personCutout" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="960">
+      <rect width="1600" height="960" fill="white"/>
+      <path fill="black" d="M737 291 C740 322 732 334 718 345 C705 356 684 360 666 366 C646 371 634 383 625 404 L574 515 C565 534 571 553 590 559 L623 559 C638 559 642 550 640 535 L638 478 C637 460 647 450 665 450 L935 450 C953 450 963 460 962 478 L960 535 C958 550 962 559 977 559 L1010 559 C1029 553 1035 534 1026 515 L975 404 C966 383 954 371 934 366 C916 360 895 356 882 345 C868 334 860 322 863 291 Z"/>
+    </mask>
+  </defs>
+
+  <!-- Two simple code monitors -->
+  <g aria-hidden="true">
+    <path class="screen" d="M700 232 L482 215 Q474 214 474 224 L481 432 Q482 443 493 443 L607 428"/>
+    <path class="line" d="M699 242 L501 230 Q493 229 493 239 L499 419 Q499 429 509 428 L605 419"/>
+    <path class="screen" d="M860 232 L1078 215 Q1086 214 1086 224 L1079 432 Q1078 443 1067 443 L953 428"/>
+    <path class="line" d="M861 242 L1059 230 Q1067 229 1067 239 L1061 419 Q1061 429 1051 428 L955 419"/>
+
+    <!-- Left screen prompt and code -->
+    <path class="line" stroke-width="3" d="M519 258 l12 7 -12 7 M534 258 l12 7 -12 7"/>
+    <g class="code-a">
+      <rect class="code-dark" x="558" y="257" width="7" height="56" rx="2"/>
+      <rect class="code" x="572" y="259" width="24" height="7" rx="2"/>
+      <rect class="code" x="602" y="259" width="38" height="7" rx="2"/>
+      <rect class="code" x="646" y="259" width="10" height="7" rx="2"/>
+      <rect class="code" x="572" y="273" width="15" height="7" rx="2"/>
+      <rect class="code" x="592" y="273" width="25" height="7" rx="2"/>
+      <rect class="code" x="622" y="273" width="27" height="7" rx="2"/>
+      <rect class="code" x="572" y="288" width="49" height="7" rx="2"/>
+      <rect class="code-dark" x="572" y="302" width="29" height="7" rx="2"/>
+    </g>
+    <rect class="cursor" x="558" y="257" width="7" height="7" rx="1"/>
+
+    <!-- Right screen code -->
+    <g class="code-b">
+      <rect class="code-dark" x="884" y="263" width="7" height="34" rx="2"/>
+      <rect class="code" x="899" y="265" width="32" height="8" rx="2"/>
+      <rect class="code" x="937" y="265" width="18" height="8" rx="2"/>
+      <rect class="code" x="961" y="265" width="33" height="8" rx="2"/>
+      <rect class="code" x="899" y="281" width="20" height="8" rx="2"/>
+      <rect class="code" x="925" y="281" width="70" height="8" rx="2"/>
+      <rect class="code" x="899" y="296" width="72" height="8" rx="2"/>
+    </g>
+    <rect class="cursor" x="884" y="263" width="7" height="7" rx="1"/>
+  </g>
+
+  <!-- Desk surfaces and outer supports -->
+  <g aria-hidden="true">
+    <path class="line" d="M579 480 L472 480 Q460 480 449 488 L388 533 L388 542 Q388 553 400 553 L557 555"/>
+    <path class="line" d="M1021 480 L1128 480 Q1140 480 1151 488 L1212 533 L1212 542 Q1212 553 1200 553 L1043 555"/>
+    <path class="line" d="M405 566 L405 751 Q405 780 377 780 L138 780"/>
+    <path class="line" d="M1147 566 L1147 751 Q1147 780 1175 780 L1415 780"/>
+    <path class="line" d="M405 566 Q405 564 412 564 L557 564"/>
+    <path class="line" d="M1043 564 L1139 564 Q1147 564 1147 572"/>
+  </g>
+
+  <!-- Chair back, arms and lower supports; hidden beneath the transparent figure -->
+  <g aria-hidden="true" mask="url(#personCutout)">
+    <path class="line" d="M649 573 Q643 500 647 478 Q650 452 674 452 L882 452 Q906 452 910 478 Q914 500 907 573"/>
+    <path class="line" d="M661 573 Q656 504 659 483 Q662 468 680 468 L876 468 Q894 468 898 483 Q901 504 895 573"/>
+    <path class="line" d="M588 588 Q613 580 629 586 Q646 592 648 611 L660 753 Q661 777 649 779 Q638 781 631 758 L608 633 Q605 628 594 632 Q574 636 569 621 Q563 605 578 601 L607 601"/>
+    <path class="line" d="M1012 588 Q987 580 971 586 Q954 592 952 611 L940 753 Q939 777 951 779 Q962 781 969 758 L992 633 Q995 628 1006 632 Q1026 636 1031 621 Q1037 605 1022 601 L993 601"/>
+  </g>
+
+  <!-- Programmer silhouette with gentle breathing motion -->
+  <g class="person">
+    <!-- Transparent silhouette; a mask prevents chair lines from crossing the figure. -->
+    <!-- Neck, shoulders and arms -->
+    <path class="line" d="M737 291 Q740 323 722 340 Q704 357 672 365 Q646 371 633 389 Q621 406 605 445 L573 515 Q564 533 576 550 Q583 560 602 559 L623 558 Q640 557 640 539 L638 477 Q638 456 655 450 Q675 443 700 451"/>
+    <path class="line" d="M823 291 Q820 323 838 340 Q856 357 888 365 Q914 371 927 389 Q939 406 955 445 L987 515 Q996 533 984 550 Q977 560 958 559 L937 558 Q920 557 920 539 L922 477 Q922 456 905 450 Q885 443 860 451"/>
+  </g>
+
+  <!-- Head and ears, subtly moving -->
+  <g class="head">
+    <path class="line" d="M728 202 Q710 192 719 179 Q733 164 762 155 Q782 148 785 155 Q780 169 797 168 Q824 165 837 181 Q851 198 840 231 L829 274 Q820 309 783 316 Q746 317 730 290 Q721 272 716 244 Q710 224 728 202 Z"/>
+    <path class="line" d="M728 202 Q742 188 751 192 Q760 197 747 202 Q734 207 719 203"/>
+    <path class="line" d="M716 251 Q706 241 701 250 Q696 262 707 278 Q715 289 730 292"/>
+    <path class="line" d="M841 248 Q851 241 852 252 Q852 269 837 284 Q831 290 823 291"/>
+  </g>
+
+  <!-- Tiny active typing/cursor accent on both terminals -->
+  <g aria-hidden="true" opacity=".0">
+    <circle cx="800" cy="430" r="2"/>
+  </g>
+</svg>

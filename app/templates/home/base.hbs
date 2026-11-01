@@ -1,0 +1,36 @@
+<div class="home-container">
+
+    <div class="heading">
+        <div class="info">
+            <span class="title">Martin Bus</span>
+            <span class="sub">Software Engineer</span>
+            <span class="desc">Webservices, Desktop, Mobile and more.</span>
+        </div>
+        <div class="image">
+            {{{programmer_svg}}}
+        </div>
+    </div>
+
+    <div class="skill-list">
+        <div class="title">Skills</div>
+        <div class="items">
+            {{#each skill_list}}
+                <div class="item">
+                    {{{this.icon}}}
+                    <span class="name">{{this.name}}</span>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="langs">
+        <span class="title">I Speak</span>
+        <span class="image">{{{langs_svg}}}</span>
+    </div>
+
+    <div class="contact">
+        <span class="title">Questions or Something in Mind?</span>
+        <span class="text">Let’s Talk <app-icon name="at"></app-icon> <a href="mailto:contact@p1mo.dev">contact@p1mo.dev</a></span>
+    </div>
+
+</div>

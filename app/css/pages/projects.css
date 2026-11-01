@@ -1,0 +1,99 @@
+.project-h1 {
+    font-family: var(--bungee);
+    @apply flex justify-center items-center w-full h-40;
+    @apply text-2xl font-normal text-(--primary);
+}
+
+
+.project-container {
+    @apply flex flex-row flex-wrap justify-around items-center w-full h-auto gap-20 mb-20;
+}
+
+
+
+
+
+.project-container .main {
+    @apply flex flex-col w-[50%] mx-[25%] h-auto;
+    @apply bg-(--background-1) hover:bg-(--background-2) rounded-xl border-b-2 border-(--secondary) transition-colors;
+}
+
+.project-container .main .logo {
+    @apply flex justify-center items-center w-full h-20;
+}
+
+.project-container .main .logo svg {
+    @apply w-10 h-10;
+}
+
+.project-container .main .logo app-icon {
+    @apply inline w-10 h-10 text-(--background-3);
+}
+
+.project-container .main .logo app-icon svg {
+    @apply w-full h-full m-0 p-0;
+}
+
+.project-container .main .title {
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-lg font-semibold text-(--primary);
+}
+
+.project-container .main .desc {
+    @apply text-center whitespace-break-spaces p-4;
+}
+
+.project-container .main .site {
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-sm font-normal text-(--primary);
+}
+
+.project-container .main .site app-icon {
+    @apply inline-flex justify-center items-center w-4 h-4 text-(--primary) ml-1;
+}
+
+
+
+
+
+
+
+.project-container .sub {
+    @apply flex flex-col w-[25%] h-auto;
+    @apply bg-(--background-1) hover:bg-(--background-2) rounded-xl border-b-2 border-(--secondary) transition-colors;
+}
+
+.project-container .sub .logo {
+    @apply flex justify-center items-center w-full h-20;
+}
+
+.project-container .sub .logo svg {
+    @apply w-10 h-10;
+}
+
+.project-container .sub .logo app-icon {
+    @apply inline w-10 h-10 text-(--background-3);
+}
+
+.project-container .sub .logo app-icon svg {
+    @apply w-full h-full m-0 p-0;
+}
+
+.project-container .sub .title {
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-lg font-semibold text-(--primary);
+}
+
+.project-container .sub .desc {
+    @apply text-center whitespace-break-spaces p-4;
+}
+
+.project-container .sub .site {
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-sm font-normal text-(--primary);
+}
+
+.project-container .sub .site app-icon {
+    @apply inline-flex justify-center items-center w-4 h-4 text-(--primary) ml-1;
+}
+

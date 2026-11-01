@@ -1,0 +1,20 @@
+<div class="history-h1">My History</div>
+<div class="history-container">
+    {{#each history}}
+        {{#if this.space}}
+        <div class="space">
+            <div class="line"></div>
+            <span class="title">{{{this.title}}}</span>
+            <span class="time">{{this.time}}</span>
+            <span class="desc">{{{this.desc}}}</span>
+            <div class="line"></div>
+        </div>
+        {{else}}
+        <div class="card">
+            <span class="title">{{{this.title}}}</span>
+            <span class="time">{{this.time}}</span>
+            <span class="desc">{{{this.desc}}}</span>
+        </div>
+        {{/if}}
+    {{/each}}
+</div>

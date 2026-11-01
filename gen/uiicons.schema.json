@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Config",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "component": {
+      "title": "HTML Component for the icon.",
+      "description": "This HTML Componen uses `fetch` to retrive the icons\n```js\nfetch(\"/icons/{icon_name}.svg\")\n```",
+      "$ref": "#/$defs/Component"
+    },
+    "icons": {
+      "title": "Icons of your choise",
+      "description": "The Map that holds your icons",
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/Icon"
+      }
+    }
+  },
+  "required": [
+    "$schema",
+    "component",
+    "icons"
+  ],
+  "$defs": {
+    "Component": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "title": "Default Icon",
+          "description": "Set your `icon` if the component HTML attribute is empty. Example `home`",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Default Kind",
+          "description": "Set your `kind` if the component HTML attribute is empty. Options are `fill, stroke`",
+          "type": "string"
+        },
+        "name": {
+          "title": "Component Name",
+          "description": "> Info: all `Custom Component API` components require an `-` in the name\nSet your HTML Component name like `ui-icons`",
+          "type": "string"
+        },
+        "size": {
+          "title": "Default Size",
+          "description": "Set your `size` if the component HTML attribute is empty. Example `24px`",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "icon",
+        "size",
+        "kind"
+      ]
+    },
+    "Icon": {
+      "type": "object",
+      "properties": {
+        "icon": {
+          "title": "Icon Name",
+          "description": "Info: For icons like google (mdi) you need to specify the category like `action/123`",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Icon Kind",
+          "description": "Set the icon kind. For example tabler has two kinds `filled, outline`",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "title": "Sources",
+          "description": "| IconSet           | Website                           | Github                                            |\n|:------------------|:----------------------------------|:--------------------------------------------------|\n| tabler            | https://tabler.io                 | https://github.com/tabler/tabler-icons            |\n| simpleicons       | https://simpleicons.org           | https://github.com/simple-icons/simple-icons      |\n| feather           | https://feathericons.com/         | https://github.com/feathericons/feather           |\n| google            | https://fonts.google.com/icons    | https://github.com/google/material-design-icons   |\n| lucide            | https://lucide.dev                | https://github.com/lucide-icons/lucide            |\n| heroicons         | https://heroicons.com             | https://github.com/tailwindlabs/heroicons         |\n| bootstrap         | https://icons.getbootstrap.com    | https://github.com/twbs/icons                     |\n| remixicon         | https://remixicon.com             | https://github.com/Remix-Design/RemixIcon         |\n| iconoir           | https://iconoir.com               | https://github.com/iconoir-icons/iconoir          |\n| phosphor          | https://phosphoricons.com         | https://github.com/phosphor-icons/core            |\n| thesvg            | https://thesvg.org                | https://github.com/glincker/thesvg                |\n| devicons          | https://devicon.dev               | https://github.com/devicons/devicon               |",
+          "$ref": "#/$defs/Source"
+        }
+      },
+      "required": [
+        "source",
+        "icon"
+      ]
+    },
+    "Source": {
+      "type": "string",
+      "enum": [
+        "bootstrap",
+        "devicons",
+        "feather",
+        "google",
+        "heroicons",
+        "iconoir",
+        "lucide",
+        "phosphor",
+        "remixicon",
+        "simpleicons",
+        "tabler",
+        "thesvg"
+      ]
+    }
+  }
+}

@@ -1,0 +1,100 @@
+[
+    {
+        "title": "First Release",
+        "time" : "17.06.1992 - Germany",
+        "desc" : "Something new entered Planet Earth.",
+        "space": true
+    },
+    {
+        "title": "I Played a lot of Demos and got into Cracking",
+        "time" : "~2001",
+        "desc" : "My Journey began with PC Magazines like: <a target=\"_blank\" href=\"https://de.wikipedia.org/wiki/Computer_Bild\">ComputerBild</a>, <a target=\"_blank\" href=\"https://de.wikipedia.org/wiki/Chip_(Zeitschrift)\">Chip</a>, other and a lot of Demo Games. Until i discovered that full games can be cracked and played. I invested a lot of time into it."
+    },
+    {
+        "title": "Call of Duty 1.1 got Released",
+        "time" : "~2003",
+        "desc" : "This release changed a lot for me. My first Nickname \"mufelz\". I learned a lot about a Multiplayer, GameServers (also later with Hamachi), Clans, People. Later i opened my own Clan and changed a lot of times the names. My first Website was made with <a target=\"_blank\" href=\"https://www.homepage-baukasten.de\">homepage-baukasten.de</a>"
+    },
+    {
+        "title": "I Started to Learn PHP",
+        "time" : "2003 - 2005",
+        "desc" : "In This time i started to Learn PHP and used CMS's like ilch.de and Webspell. I made Designs (using HTML and CSS), Plugins and got in Touch with my first RootServer. First i started with and Simple TextEditor but i got my hands on Macromedia Dreamweaver (now Adobe Dreamweaver) and used it."
+    },
+    {
+        "title": "My First Website",
+        "time" : "2005 - 2007",
+        "desc" : "Around 2005 got my first Website released for my Call of Duty 1.1 Clan. This was a full Custom CMS with User and Admin Panel i made it with PHP. Since then i made a lot of Designs and Content Management Systems for me and other people."
+    },
+    {
+        "title": "The C and C++ Journey started",
+        "time" : "2007",
+        "desc" : "In This time i was thinking about to make my own Game. I made my own 2D Platformer but i never released it to the public. A few people played it... Clan Members and People from my TeamSpeak Server."
+    },
+    {
+        "title": "I joined a new Clan XoF (Xtreme online Fighters)",
+        "time" : "2007",
+        "desc" : "This same Year was my new Gaming Home Xtreme online Fighters (XoF) and my Gaming Name was \"fensziii\". We played CounterStrike Source, Call of Duty 4 aktive and more Games. We started to play CoD4 in the ESL. It was a great time and they made me the Co-Leader of XoF and Later on of the Leaders. I Managed the Website, RootServer and our GameServer's."
+    },
+    {
+        "title": "Adobe After Effects",
+        "time" : "2007",
+        "desc" : "I started to Learn After Effects and made my own Frag Movies with CounterStrike and Call of Duty Gameplay and released it on a Site Called Wipido.com (now a honey)"
+    },
+    {
+        "title": "Something new and got Published",
+        "time" : "2008 - 2009",
+        "desc" : "In this time i heard of a new project called \"Bitcoin\" and i invested a lot of time into it and lost a lot nervs later on."
+    },
+    {
+        "title": "My First Business Idea",
+        "time" : "2008 - 2009",
+        "desc" : "In this time i got an awesome idea. Why not making a small Business with my Skills. My first Idea was born shine-host.de Sponsoring and an ShopCMS (Free and OpenSource with an Premium Option) with Features like: Sell Front-End, Client Panel, Admin Panel, Ticket System and a lot more. But i was Young and had No Expirience in Businesses and Law (Someone wanted to sue me because he changed ~10 Lines in my Codebase and was thinking about to grab the project for his self)."
+    },
+    {
+        "title": "We Closed XoF and i joined FsK",
+        "time" : "2010",
+        "desc" : "Around 2010 got XoF closed by us. I and an other Member joined <a target=\"_blank\" href=\"https://www.fsk-g4ming.de\">FsK (FreundesKreis)</a>. At that time they had a Website with ilch.de and i made a new Design. Again i managed the RootServer's and everything running on it."
+    },
+    {
+        "title": "Blender, Unreal Engine was an new Journey",
+        "time" : "2010 - 2012",
+        "desc" : "3D Videos and 3D Game Developent was my new Journey and a good one i learnd a lot about 3D, Animations and more"
+    },
+    {
+        "title": "A NEW Journey Began",
+        "time" : "2012 - 2014",
+        "desc" : "New Programming Languages called Rust and Go got released, a GameEngine called Godot and my interest was big."
+    },
+    {
+        "title": "Crypto",
+        "time" : "~2015",
+        "desc" : "Around 2015 i started investing more time into Crypto"
+    },
+    {
+        "title": "Zig got released",
+        "time" : "2017",
+        "desc" : "Since then i had an eye on Zig."
+    },
+    {
+        "title": "Projects, Skills and more",
+        "time" : "2017 - 2021",
+        "desc" : "This time i used a lot of my Time to make Projects, Plans and Improve my Skills in Programming, Marketing, Law and other things. I Started to teach kids to make 2D Games with Godot and GDScript.",
+        "space": true
+    },
+    {
+        "title": "OpenSource",
+        "time" : "~2021",
+        "desc" : "Investing more time into OpenSource Projects and my own Projects."
+    },
+    {
+        "title": "Started work on my own Business",
+        "time" : "~2023",
+        "desc" : "I made a plan and since then i'm working on my own Business."
+    },
+    {
+        "title": "p1mo.dev got released",
+        "time" : "2026",
+        "desc" : "My Personal Portfolio",
+        "space": true
+    }
+]
