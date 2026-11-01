@@ -1,0 +1,39 @@
+[
+    [
+        {
+            "title": "p1mo.dev",
+            "site" : "p1mo.dev",
+            "desc" : "Personal Portfolio (Martin Bus aka p1mo)",
+            "main" : true
+        }
+    ],
+    [
+        {
+            "title": "Vemox",
+            "logo" : "vemox",
+            "site" : "vemox.de",
+            "desc" : "Responsible for managing and overseeing the following brands: blockz.dev, keoku.xyz, vexa.cx",
+            "main" : true
+        }
+    ],
+    [
+        {
+            "title": "BLOCKz",
+            "logo" : "block",
+            "site" : "blockz.dev",
+            "desc" : "Tools, Services, IoT and Embedded focused."
+        },
+        {
+            "title": "KEOKU",
+            "logo" : "keoku",
+            "site" : "keoku.xyz",
+            "desc" : "RGPU Rendered UI & APP Framework"
+        },
+        {
+            "title": "VEXA",
+            "logo" : "vexa",
+            "site" : "vexa.cx",
+            "desc" : "AI focused Services and Tools"
+        }
+    ]
+]

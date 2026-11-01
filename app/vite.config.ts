@@ -3,8 +3,10 @@ import tailwindcss from '@tailwindcss/vite'
 // import { resolve } from 'path'
 
 export default defineConfig({
+  publicDir: "public",
   build: {
     emptyOutDir: true,
+    copyPublicDir: true,
     outDir: "../temp/app",
   },
   plugins: [

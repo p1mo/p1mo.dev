@@ -1,0 +1,214 @@
+<div class="errors-container">
+    <svg xmlns="http://www.w3.org/2000/svg" width="720" height="420" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+        <title id="title">{{code}} — {{text}}</title>
+        <desc id="desc">{{desc}}</desc>
+        <style>
+            /* Inline this SVG to inherit the website's color through currentColor. */
+            /* Harmonic keyframes are sampled densely to keep motion continuous at loop boundaries. */
+            .orbit {
+                transform-box: view-box;
+                transform-origin: 360px 210px;
+                animation: orbit 52s linear -13s infinite;
+            }
+            .float { animation: float 8.8s linear -2.2s infinite; }
+            .float-late { animation: float 10.6s linear -6.1s infinite; }
+            .twinkle, .twinkle-late {
+                transform-box: fill-box;
+                transform-origin: center;
+                animation-name: twinkle;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+            .twinkle { animation-duration: 7.4s; animation-delay: -1.85s; }
+            .twinkle-late { animation-duration: 9.1s; animation-delay: -5.2s; }
+            .search {
+                transform-box: fill-box;
+                transform-origin: center;
+                animation: search 7.8s linear -2.6s infinite;
+            }
+            .dash { stroke-dasharray: 5 8; animation: dash 30s linear -11s infinite; }
+            @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+            @keyframes float {
+                0% { transform: translateY(0px); }
+                2.5% { transform: translateY(-0.049px); }
+                5% { transform: translateY(-0.196px); }
+                7.5% { transform: translateY(-0.436px); }
+                10% { transform: translateY(-0.764px); }
+                12.5% { transform: translateY(-1.172px); }
+                15% { transform: translateY(-1.649px); }
+                17.5% { transform: translateY(-2.184px); }
+                20% { transform: translateY(-2.764px); }
+                22.5% { transform: translateY(-3.374px); }
+                25% { transform: translateY(-4px); }
+                27.5% { transform: translateY(-4.626px); }
+                30% { transform: translateY(-5.236px); }
+                32.5% { transform: translateY(-5.816px); }
+                35% { transform: translateY(-6.351px); }
+                37.5% { transform: translateY(-6.828px); }
+                40% { transform: translateY(-7.236px); }
+                42.5% { transform: translateY(-7.564px); }
+                45% { transform: translateY(-7.804px); }
+                47.5% { transform: translateY(-7.951px); }
+                50% { transform: translateY(-8px); }
+                52.5% { transform: translateY(-7.951px); }
+                55% { transform: translateY(-7.804px); }
+                57.5% { transform: translateY(-7.564px); }
+                60% { transform: translateY(-7.236px); }
+                62.5% { transform: translateY(-6.828px); }
+                65% { transform: translateY(-6.351px); }
+                67.5% { transform: translateY(-5.816px); }
+                70% { transform: translateY(-5.236px); }
+                72.5% { transform: translateY(-4.626px); }
+                75% { transform: translateY(-4px); }
+                77.5% { transform: translateY(-3.374px); }
+                80% { transform: translateY(-2.764px); }
+                82.5% { transform: translateY(-2.184px); }
+                85% { transform: translateY(-1.649px); }
+                87.5% { transform: translateY(-1.172px); }
+                90% { transform: translateY(-0.764px); }
+                92.5% { transform: translateY(-0.436px); }
+                95% { transform: translateY(-0.196px); }
+                97.5% { transform: translateY(-0.049px); }
+                100% { transform: translateY(0px); }
+            }
+            @keyframes twinkle {
+                0% { opacity: 0.9; transform: scale(1.04) rotate(0deg); }
+                2.5% { opacity: 0.898; transform: scale(1.04) rotate(0.626deg); }
+                5% { opacity: 0.891; transform: scale(1.038) rotate(1.236deg); }
+                7.5% { opacity: 0.881; transform: scale(1.036) rotate(1.816deg); }
+                10% { opacity: 0.867; transform: scale(1.033) rotate(2.351deg); }
+                12.5% { opacity: 0.849; transform: scale(1.03) rotate(2.828deg); }
+                15% { opacity: 0.828; transform: scale(1.026) rotate(3.236deg); }
+                17.5% { opacity: 0.804; transform: scale(1.021) rotate(3.564deg); }
+                20% { opacity: 0.779; transform: scale(1.016) rotate(3.804deg); }
+                22.5% { opacity: 0.752; transform: scale(1.01) rotate(3.951deg); }
+                25% { opacity: 0.725; transform: scale(1.005) rotate(4deg); }
+                27.5% { opacity: 0.698; transform: scale(1) rotate(3.951deg); }
+                30% { opacity: 0.671; transform: scale(0.994) rotate(3.804deg); }
+                32.5% { opacity: 0.646; transform: scale(0.989) rotate(3.564deg); }
+                35% { opacity: 0.622; transform: scale(0.984) rotate(3.236deg); }
+                37.5% { opacity: 0.601; transform: scale(0.98) rotate(2.828deg); }
+                40% { opacity: 0.583; transform: scale(0.977) rotate(2.351deg); }
+                42.5% { opacity: 0.569; transform: scale(0.974) rotate(1.816deg); }
+                45% { opacity: 0.559; transform: scale(0.972) rotate(1.236deg); }
+                47.5% { opacity: 0.552; transform: scale(0.97) rotate(0.626deg); }
+                50% { opacity: 0.55; transform: scale(0.97) rotate(0deg); }
+                52.5% { opacity: 0.552; transform: scale(0.97) rotate(-0.626deg); }
+                55% { opacity: 0.559; transform: scale(0.972) rotate(-1.236deg); }
+                57.5% { opacity: 0.569; transform: scale(0.974) rotate(-1.816deg); }
+                60% { opacity: 0.583; transform: scale(0.977) rotate(-2.351deg); }
+                62.5% { opacity: 0.601; transform: scale(0.98) rotate(-2.828deg); }
+                65% { opacity: 0.622; transform: scale(0.984) rotate(-3.236deg); }
+                67.5% { opacity: 0.646; transform: scale(0.989) rotate(-3.564deg); }
+                70% { opacity: 0.671; transform: scale(0.994) rotate(-3.804deg); }
+                72.5% { opacity: 0.698; transform: scale(1) rotate(-3.951deg); }
+                75% { opacity: 0.725; transform: scale(1.005) rotate(-4deg); }
+                77.5% { opacity: 0.752; transform: scale(1.01) rotate(-3.951deg); }
+                80% { opacity: 0.779; transform: scale(1.016) rotate(-3.804deg); }
+                82.5% { opacity: 0.804; transform: scale(1.021) rotate(-3.564deg); }
+                85% { opacity: 0.828; transform: scale(1.026) rotate(-3.236deg); }
+                87.5% { opacity: 0.849; transform: scale(1.03) rotate(-2.828deg); }
+                90% { opacity: 0.867; transform: scale(1.033) rotate(-2.351deg); }
+                92.5% { opacity: 0.881; transform: scale(1.036) rotate(-1.816deg); }
+                95% { opacity: 0.891; transform: scale(1.038) rotate(-1.236deg); }
+                97.5% { opacity: 0.898; transform: scale(1.04) rotate(-0.626deg); }
+                100% { opacity: 0.9; transform: scale(1.04) rotate(0deg); }
+            }
+            @keyframes search {
+                0% { transform: translate(0px, 0px) rotate(0deg); }
+                2.5% { transform: translate(0.313px, -0.025px) rotate(0.469deg); }
+                5% { transform: translate(0.618px, -0.098px) rotate(0.927deg); }
+                7.5% { transform: translate(0.908px, -0.218px) rotate(1.362deg); }
+                10% { transform: translate(1.176px, -0.382px) rotate(1.763deg); }
+                12.5% { transform: translate(1.414px, -0.586px) rotate(2.121deg); }
+                15% { transform: translate(1.618px, -0.824px) rotate(2.427deg); }
+                17.5% { transform: translate(1.782px, -1.092px) rotate(2.673deg); }
+                20% { transform: translate(1.902px, -1.382px) rotate(2.853deg); }
+                22.5% { transform: translate(1.975px, -1.687px) rotate(2.963deg); }
+                25% { transform: translate(2px, -2px) rotate(3deg); }
+                27.5% { transform: translate(1.975px, -2.313px) rotate(2.963deg); }
+                30% { transform: translate(1.902px, -2.618px) rotate(2.853deg); }
+                32.5% { transform: translate(1.782px, -2.908px) rotate(2.673deg); }
+                35% { transform: translate(1.618px, -3.176px) rotate(2.427deg); }
+                37.5% { transform: translate(1.414px, -3.414px) rotate(2.121deg); }
+                40% { transform: translate(1.176px, -3.618px) rotate(1.763deg); }
+                42.5% { transform: translate(0.908px, -3.782px) rotate(1.362deg); }
+                45% { transform: translate(0.618px, -3.902px) rotate(0.927deg); }
+                47.5% { transform: translate(0.313px, -3.975px) rotate(0.469deg); }
+                50% { transform: translate(0px, -4px) rotate(0deg); }
+                52.5% { transform: translate(-0.313px, -3.975px) rotate(-0.469deg); }
+                55% { transform: translate(-0.618px, -3.902px) rotate(-0.927deg); }
+                57.5% { transform: translate(-0.908px, -3.782px) rotate(-1.362deg); }
+                60% { transform: translate(-1.176px, -3.618px) rotate(-1.763deg); }
+                62.5% { transform: translate(-1.414px, -3.414px) rotate(-2.121deg); }
+                65% { transform: translate(-1.618px, -3.176px) rotate(-2.427deg); }
+                67.5% { transform: translate(-1.782px, -2.908px) rotate(-2.673deg); }
+                70% { transform: translate(-1.902px, -2.618px) rotate(-2.853deg); }
+                72.5% { transform: translate(-1.975px, -2.313px) rotate(-2.963deg); }
+                75% { transform: translate(-2px, -2px) rotate(-3deg); }
+                77.5% { transform: translate(-1.975px, -1.687px) rotate(-2.963deg); }
+                80% { transform: translate(-1.902px, -1.382px) rotate(-2.853deg); }
+                82.5% { transform: translate(-1.782px, -1.092px) rotate(-2.673deg); }
+                85% { transform: translate(-1.618px, -0.824px) rotate(-2.427deg); }
+                87.5% { transform: translate(-1.414px, -0.586px) rotate(-2.121deg); }
+                90% { transform: translate(-1.176px, -0.382px) rotate(-1.763deg); }
+                92.5% { transform: translate(-0.908px, -0.218px) rotate(-1.362deg); }
+                95% { transform: translate(-0.618px, -0.098px) rotate(-0.927deg); }
+                97.5% { transform: translate(-0.313px, -0.025px) rotate(-0.469deg); }
+                100% { transform: translate(0px, 0px) rotate(0deg); }
+            }
+            @keyframes dash { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -260; } }
+            @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; }
+            }
+        </style>
+
+        <!-- Soft orbital guide -->
+        <g class="orbit" fill="none" stroke="var(--secondary)" stroke-width="1.5" opacity=".17">
+            <ellipse cx="360" cy="210" rx="284" ry="143" class="dash" />
+        </g>
+
+        <!-- Small floating details -->
+        <g class="twinkle" stroke="var(--secondary)" stroke-width="2.2" stroke-linecap="round" fill="none">
+            <path d="M111 131v18M102 140h18" />
+        </g>
+        <g class="twinkle-late" stroke="var(--secondary)" stroke-width="2.2" stroke-linecap="round" fill="none">
+            <path d="M594 114v16M586 122h16" />
+        </g>
+        <circle cx="121" cy="270" r="4" fill="var(--secondary)" opacity=".5" class="float-late" />
+        <circle cx="610" cy="286" r="3" fill="var(--secondary)" opacity=".45" class="float" />
+        <path d="M573 327l7 7m0-7-7 7" stroke="var(--secondary)" stroke-width="1.8" stroke-linecap="round" opacity=".42" />
+
+        <!-- Browser window -->
+        <g class="float">
+            <rect x="166" y="61" width="388" height="294" rx="22" fill="none" stroke="var(--primary)" stroke-opacity=".78" stroke-width="2" />
+            <path d="M167 105h386" stroke="var(--primary)" stroke-opacity=".32" stroke-width="1.5" />
+            <circle cx="192" cy="83" r="4" fill="var(--primary)" opacity=".38" />
+            <circle cx="208" cy="83" r="4" fill="var(--primary)" opacity=".38" />
+            <circle cx="224" cy="83" r="4" fill="var(--primary)" opacity=".38" />
+            <rect x="360" y="74" width="124" height="18" rx="9" fill="var(--primary)" fill-opacity=".07" />
+            <path d="M376 83h40m7 0h17" stroke="var(--primary)" stroke-width="1.6" stroke-linecap="round" opacity=".32" />
+
+            <!-- Error code: change 404 and the caption below for other HTTP errors. -->
+            <text id="error-code" x="360" y="213" fill="currentColor" font-family="'Bungee', sans-serif" font-size="88" font-weight="600" letter-spacing="0" text-anchor="middle">{{code}}</text>
+            <text id="error-title" x="360" y="246" fill="currentColor" fill-opacity=".78" font-family="'Roboto Mono', sans-serif" font-size="14" font-weight="700" letter-spacing="2" text-anchor="middle">{{text}}</text>
+            <path d="M278 270h58m8 0h18m8 0h72" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" opacity=".2" />
+            <text id="error-message" x="360" y="303" fill="currentColor" fill-opacity=".58" font-family="'Roboto', sans-serif" font-size="14" letter-spacing=".3" text-anchor="middle">{{desc}}</text>
+        </g>
+
+        <!-- Searching lens, floating independently over the window edge -->
+        <g class="search" fill="none" stroke="var(--secondary)" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="505" cy="270" r="27" stroke-width="3.5" fill="none" />
+            <path d="M525 290l19 19" stroke-width="7" />
+            <path d="M493 270c3-7 8-10 14-10" stroke-width="2" opacity=".45" />
+            <path d="M500 270l5 5 8-10" stroke-width="2.5" opacity=".8" />
+        </g>
+
+        <!-- A tiny broken route marker -->
+        <g class="float-late" fill="none" stroke="var(--secondary)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".68">
+            <path d="M128 211c-7-7-7-18 0-25l8-8c7-7 18-7 25 0" />
+            <path d="M151 220c7 7 18 7 25 0l8-8c7-7 7-18 0-25" />
+            <path d="M145 194l-9 9m21-2-9 9" />
+        </g>
+    </svg>
+</div>

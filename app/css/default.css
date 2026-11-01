@@ -1,10 +1,26 @@
-:root {
-    --text: #000f1c;
-    --background: #aabdbf;
+app-icon {
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
 
-    --code: #d4ebee;
-    --border: #b2c6c9;
-    --darkbg: #9fb1b3;
+app-icon svg {
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+:root {
+    --text: #fefefe;
+    
+    --background-0: #090c13;
+    --background-1: #06090e;
+    --background-2: #040608;
+    --background-3: #111724;
 
     --primary: #73EC8B;
     --secondary: #D2FF72;
@@ -12,18 +28,33 @@
     --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     :root {
-        --text: #aabdbf;
-        --background: #000f1c;
+        --text: #000f1c;
+    
+        --background-0: #fefefe;
+        --background-1: #d3d3d3;
+        --background-2: #bebebe;
+        --background-3: #b8b8b8;
 
-        --code: #003c70;
-        --border: #001a31;
-        --darkbg: #000c16;
-
-        --primary: #73EC8B;
-        --secondary: #D2FF72;
+        --primary: #287A74;
+        --secondary: #A14646;
 
         --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
     }
+}
+
+
+:root {
+  --robo: 'Roboto', sans-serif;
+  --robo-mono: 'Roboto Mono', sans-serif;
+  --bungee: 'Bungee', sans-serif;
+
+  font-family: var(--robo);    
+  color-scheme: light dark;
+    
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

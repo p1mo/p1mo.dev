@@ -1,5 +1,6 @@
 use std::{collections::HashMap, sync::Arc};
 use handlebars::Handlebars;
+use uiicons::EmbededIcons;
 
 
 
@@ -7,52 +8,43 @@ use handlebars::Handlebars;
 
 pub type ArcEngine<'a> = Arc<Engine<'a>>;
 
-pub struct Engine<'a>(Handlebars<'a>, HashMap<String, &'static [u8]>);
+pub struct Engine<'a>(Handlebars<'a>, HashMap<String, &'static [u8]>, EmbededIcons);
 
 impl<'a> Engine<'a> {
 
     pub fn default() -> Result<ArcEngine<'a>, crate::Error> {
 
         let mut engine = Handlebars::new();
-
         engine.register_template_string("__INDEX__", include_str!("../temp/app/index.html"))?;
-
         for entry in &ufs::bind_dir!("app/templates") {
-
             let path = entry.path.display().to_string();
-            
             if !path.starts_with("assets") && path.ends_with(".hbs") || path.ends_with(".html") && path.ends_with(".html") {
-
                 tracing::debug!("[TEMPATE] {}", path);
-
                 engine.register_template_string(entry.path.to_str().unwrap(), String::from_utf8(entry.content()?.to_vec())?)?;
-
             }
-
         }
 
         let mut assets = HashMap::new();
-
         for entry in &ufs::bind_dir!("temp/app") {
-
             let path = entry.path.display().to_string();
-            
             if path.starts_with("assets") {
-
                 tracing::debug!("[ASSET] {}", path);
-
                 assets.insert(entry.path.display().to_string(), entry.content()?);
-
             }
-
+            if path.starts_with("static") {
+                tracing::debug!("[STATIC] {}", path);
+                assets.insert(entry.path.display().to_string(), entry.content()?);
+            }
         }
-
         assets.insert("__LOGO_BLOCK__".to_string(), include_bytes!("../app/logos/blockz.svg"));
         assets.insert("__LOGO_KEOKU__".to_string(), include_bytes!("../app/logos/keoku.svg"));
         assets.insert("__LOGO_VEMOX__".to_string(), include_bytes!("../app/logos/vemox.svg"));
         assets.insert("__LOGO_VEXA__".to_string(), include_bytes!("../app/logos/vexa.svg"));
+        
+        assets.insert("__PROGRAMMER__".to_string(), include_bytes!("../app/logos/animated_programmer.svg"));
+        assets.insert("__LANGS__".to_string(), include_bytes!("../app/logos/languages_wide.svg"));
 
-        Ok(ArcEngine::new(Self(engine, assets)))
+        Ok(ArcEngine::new(Self(engine, assets, uiicons::embeded_icons!())))
 
     }
 
@@ -69,6 +61,10 @@ pub trait EngineDepotExt {
         T: serde::Serialize;
     
     fn assets<P>(&self, path: P) -> Option<&'static [u8]>
+    where
+        P: AsRef<std::path::Path>;
+    
+    fn icons<P>(&self, path: P) -> Option<Vec<u8>>
     where
         P: AsRef<std::path::Path>;
     
@@ -96,6 +92,15 @@ impl EngineDepotExt for salvo::Depot {
     {
         let engine = self.get_typed::<ArcEngine>().unwrap();
         Some(engine.1.get(path.as_ref().to_str().unwrap())?)
+    }
+
+    fn icons<P>(&self, path: P) -> Option<Vec<u8>>
+    where
+        P: AsRef<std::path::Path>
+    {
+        let engine = self.get_typed::<ArcEngine>().unwrap();
+        let name = path.as_ref().to_str()?.strip_prefix("icons/")?.strip_suffix(".svg")?;
+        Some(engine.2.find(name).unwrap_or(engine.2.find("404").unwrap()).to_vec())
     }
 
     fn template<P, T>(&self, path: P, data: T) -> Result<String, crate::Error>

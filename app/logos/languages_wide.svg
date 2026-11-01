@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 360"
+     role="img"
+     color="inherit"
+     fill="none"
+     style="color: inherit">
+
+  <defs>
+    <style>
+      /* All visible color comes from the SVG's inherited CSS color. */
+      svg { color: inherit; }
+      .line {
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .text {
+        fill: currentColor;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+      .muted { opacity: .58; }
+      .faint { opacity: .22; }
+      .card-outline { opacity: .42; }
+      .icon-outline { opacity: .62; }
+      .accent { opacity: .48; }
+
+      .card-motion {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: card-float 6s ease-in-out infinite;
+      }
+      .card-motion--2 { animation-delay: -2s; }
+      .card-motion--3 { animation-delay: -4s; }
+      .connector-motion {
+        stroke-dasharray: 3 9;
+        animation: connector-flow 10s linear infinite;
+      }
+      .connector-motion--2 { animation-delay: -5s; }
+      .node-motion { animation: node-pulse 2.8s ease-in-out infinite; }
+      .node-motion--2 { animation-delay: -1.4s; }
+
+      @keyframes card-float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes connector-flow {
+        to { stroke-dashoffset: -120; }
+      }
+      @keyframes node-pulse {
+        0%, 100% { opacity: .3; }
+        50% { opacity: .9; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation: none !important; }
+      }
+    </style>
+  </defs>
+
+  <!-- Connectors are behind the cards. -->
+  <g class="line muted" stroke-width="2">
+    <path class="connector-motion" d="M352 180 H450"/>
+    <path class="connector-motion connector-motion--2" d="M750 180 H848"/>
+  </g>
+  <g class="node-motion">
+    <circle cx="401" cy="180" r="4" fill="currentColor"/>
+  </g>
+  <g class="node-motion node-motion--2">
+    <circle cx="799" cy="180" r="4" fill="currentColor"/>
+  </g>
+
+  <!-- Deutsch -->
+  <g transform="translate(52 102)">
+    <g class="card-motion">
+      <rect class="line card-outline" x="1" y="1" width="298" height="154" rx="23" stroke-width="2.2"/>
+      <circle class="line icon-outline" cx="58" cy="65" r="27" stroke-width="2"/>
+      <text class="text" x="58" y="71" text-anchor="middle" font-size="17" font-weight="700" letter-spacing=".4">DE</text>
+      <text class="text" x="103" y="64" font-size="24" font-weight="650" letter-spacing="-.5">Deutsch</text>
+      <text class="text muted" x="103" y="91" font-size="16" font-weight="450">Guten Tag</text>
+      <path class="line faint" d="M26 117 H274" stroke-width="1.5"/>
+      <path class="line accent" d="M27 133 H91" stroke-width="2.4"/>
+      <circle cx="274" cy="133" r="3.5" fill="currentColor" class="accent"/>
+    </g>
+  </g>
+
+  <!-- English -->
+  <g transform="translate(450 102)">
+    <g class="card-motion card-motion--2">
+      <rect class="line card-outline" x="1" y="1" width="298" height="154" rx="23" stroke-width="2.2"/>
+      <circle class="line icon-outline" cx="58" cy="65" r="27" stroke-width="2"/>
+      <text class="text" x="58" y="71" text-anchor="middle" font-size="17" font-weight="700" letter-spacing=".4">EN</text>
+      <text class="text" x="103" y="64" font-size="24" font-weight="650" letter-spacing="-.5">English</text>
+      <text class="text muted" x="103" y="91" font-size="16" font-weight="450">Hello there</text>
+      <path class="line faint" d="M26 117 H274" stroke-width="1.5"/>
+      <path class="line accent" d="M27 133 H91" stroke-width="2.4"/>
+      <circle cx="274" cy="133" r="3.5" fill="currentColor" class="accent"/>
+    </g>
+  </g>
+
+  <!-- Polski -->
+  <g transform="translate(848 102)">
+    <g class="card-motion card-motion--3">
+      <rect class="line card-outline" x="1" y="1" width="298" height="154" rx="23" stroke-width="2.2"/>
+      <circle class="line icon-outline" cx="58" cy="65" r="27" stroke-width="2"/>
+      <text class="text" x="58" y="71" text-anchor="middle" font-size="17" font-weight="700" letter-spacing=".4">PL</text>
+      <text class="text" x="103" y="64" font-size="24" font-weight="650" letter-spacing="-.5">Polski</text>
+      <text class="text muted" x="103" y="91" font-size="16" font-weight="450">Cześć</text>
+      <path class="line faint" d="M26 117 H274" stroke-width="1.5"/>
+      <path class="line accent" d="M27 133 H91" stroke-width="2.4"/>
+      <circle cx="274" cy="133" r="3.5" fill="currentColor" class="accent"/>
+    </g>
+  </g>
+</svg>
