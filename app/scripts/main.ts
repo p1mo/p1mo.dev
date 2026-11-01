@@ -4,7 +4,7 @@ import 'htmx.org';
 import { typeIn } from "./typers.ts";
 
 
-const skills = document.querySelector(`.skills .nav a:nth-child(${Math.floor(Math.random() * 8) + 1})`);
+const skills = document.querySelector(`.skill-list .items a:nth-child(${Math.floor(Math.random() * 8) + 1})`);
 
 
 skills?.addEventListener('htmx:after:init', (evt) => {

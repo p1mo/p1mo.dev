@@ -1,7 +1,7 @@
 [package]
 name = "p1mo_dev"
 links = "p1mo_dev"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2024"
 
 [build-dependencies]

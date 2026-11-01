@@ -27,14 +27,15 @@
 
     <div class="skill-list">
         <div class="title">Skills</div>
-        <div class="items">
+        <div data-select-group class="items">
             {{#each skill_list}}
-                <div class="item">
+                <a data-selectable href="#" hx-get="/skill/{{this.uiid}}" class="item" hx-target="#skill_content">
                     {{{this.icon}}}
                     <span class="name">{{this.name}}</span>
-                </div>
+                </a>
             {{/each}}
         </div>
+        <div class="console" id="skill_content"></div>
     </div>
 
     <div class="langs">

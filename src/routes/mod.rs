@@ -5,7 +5,7 @@ mod history;
 mod home;
 mod projects;
 
-use crate::{Error, EngineDepotExt};
+use crate::{Error, EngineDepotExt, JsonDBDepotExt, Language};
 
 use salvo::prelude::*;
 
@@ -27,11 +27,31 @@ async fn icons_endpoint(req: &mut Request, depot: &mut Depot, res: &mut Response
     Ok(res.write_body(depot.icons(path).unwrap())?)
 }
 
+#[handler]
+async fn skill_finder(req: &mut Request, depot: &mut Depot, res: &mut Response) -> Result<(), Error> {
+    let id = req.param::<String>("id").unwrap();
+
+    let skill_list = depot.find_db::<Vec<Language>>("skills.json").unwrap();
+
+    res.render(
+        Text::Plain(
+            match skill_list.iter().find(|item| item.uiid == id) {
+                Some(skill) => skill.desc.clone(),
+                None => "N/A".to_string(),
+            }
+        )
+    );
+
+    Ok(())
+}
+
 pub fn router() -> Router {
     Router::new()
         .push(Router::with_path("icons/{filename}").get(icons_endpoint))
         .push(Router::with_path("assets/{filename}").get(assets_endpoint))
         .push(Router::with_path("static/{filename}").get(assets_endpoint))
+
+        .push(Router::with_path("skill/{id}").get(skill_finder))
 
         .push(Router::new().get(home::init_default))
         .push(Router::with_path("history").get(history::init_default))
