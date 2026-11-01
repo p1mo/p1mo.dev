@@ -8,7 +8,7 @@
 
 
 .history-container {
-    @apply flex flex-col items-center gap-3 w-full min-h-full mb-10;
+    @apply flex flex-col items-center gap-10 lg:gap-3 w-full min-h-full mb-10;
 }
 
 
@@ -31,7 +31,7 @@
 
 .history-container .card {
     @apply flex flex-col justify-center items-center w-[90%] lg:w-[50%] min-h-52;
-    @apply bg-(--background-1) rounded-xl;
+    @apply bg-(--background-2) rounded-xl;
 }
 
 .history-container .card .title {

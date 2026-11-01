@@ -41,6 +41,19 @@
     @apply text-sm font-semibold;
 }
 
+.home-container .heading .info .socials {
+    @apply flex justify-center items-center w-full min-h-20 gap-5;
+}
+
+.home-container .heading .info .socials a {
+    @apply inline-flex flex-col justify-center items-center w-[calc(100%/3-20px)] min-h-20 rounded-xl;
+    @apply bg-(--background-1) hover:bg-(--background-2) text-sm text-(--secondary) transition-colors;
+}
+
+.home-container .heading .info .socials a app-icon {
+    @apply w-7 h-7 mb-2;
+}
+
 .home-container .heading .image {
     @apply hidden lg:flex justify-center items-center w-[50%] min-h-100;
 }

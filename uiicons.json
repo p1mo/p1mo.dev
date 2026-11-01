@@ -44,6 +44,23 @@
       "icon": "eye"
     },
 
+
+
+    "gh-brand": {
+      "source": "simpleicons",
+      "icon": "github"
+    },
+    "coffee-brand": {
+      "source": "simpleicons",
+      "icon": "buymeacoffee"
+    },
+    "crate-brand": {
+      "source": "phosphor",
+      "icon": "package"
+    },
+
+
+
     "rust-lang": {
       "source": "simpleicons",
       "icon": "rust"

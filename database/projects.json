@@ -12,6 +12,7 @@
             "title": "Vemox",
             "logo" : "vemox",
             "site" : "vemox.de",
+            "status": "soon online",
             "desc" : "Responsible for managing and overseeing the following brands: blockz.dev, keoku.xyz, vexa.cx",
             "main" : true
         }
@@ -21,18 +22,21 @@
             "title": "BLOCKz",
             "logo" : "block",
             "site" : "blockz.dev",
+            "status": "soon online",
             "desc" : "Tools, Services, IoT and Embedded focused."
         },
         {
             "title": "KEOKU",
             "logo" : "keoku",
             "site" : "keoku.xyz",
+            "status": "soon online",
             "desc" : "RGPU Rendered UI & APP Framework"
         },
         {
             "title": "VEXA",
             "logo" : "vexa",
             "site" : "vexa.cx",
+            "status": "soon online",
             "desc" : "AI focused Services and Tools"
         }
     ]
