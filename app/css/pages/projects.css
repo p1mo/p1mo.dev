@@ -6,7 +6,7 @@
 
 
 .project-container {
-    @apply flex flex-row flex-wrap justify-around items-center w-full h-auto gap-20 mb-20;
+    @apply flex flex-row flex-wrap justify-around items-center w-full h-auto gap-10 lg:gap-20 mb-20;
 }
 
 
@@ -37,6 +37,11 @@
 .project-container .main .title {
     @apply flex justify-center items-center w-full h-20;
     @apply text-lg font-semibold text-(--primary);
+}
+
+.project-container .main .title .tag {
+    @apply inline-flex justify-center items-center py-1 px-3 mx-2;
+    @apply text-xs font-semibold bg-(--secondary) text-(--background-1) rounded-md;
 }
 
 .project-container .main .desc {
@@ -84,8 +89,13 @@
     @apply text-lg font-semibold text-(--primary);
 }
 
+.project-container .sub .title .tag {
+    @apply inline-flex justify-center items-center py-1 px-3 mx-2;
+    @apply text-xs font-semibold bg-(--secondary) text-(--background-1) rounded-md;
+}
+
 .project-container .sub .desc {
-    @apply text-center whitespace-break-spaces p-4;
+    @apply hidden lg:block text-center whitespace-break-spaces p-4;
 }
 
 .project-container .sub .site {

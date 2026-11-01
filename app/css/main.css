@@ -34,7 +34,7 @@ body {
 }
 
 .errors-container {
-  @apply flex justify-center items-center w-full min-h-full select-none;
+  @apply flex justify-center items-center w-full min-h-full select-none my-20;
 }
 
 
@@ -62,7 +62,7 @@ header .logo span {
 }
 
 header nav {
-  @apply flex justify-center items-center w-[calc(100%-300px)] lg:w-[calc(100%-400px)] h-20;
+  @apply flex justify-center items-center w-[calc(100%-150px)] lg:w-[calc(100%-400px)] h-20;
 }
 
 header nav a {
@@ -71,7 +71,7 @@ header nav a {
 }
 
 header .email {
-  @apply flex justify-center items-center w-37.5 lg:w-50 h-20;
+  @apply hidden lg:flex justify-center items-center w-37.5 lg:w-50 h-20;
 }
 
 header .email a {

@@ -15,6 +15,7 @@ type ProjectListItems = Vec<Project>;
 struct Project {
     title: String,
     logo: Option<String>,
+    status: Option<String>,
     site: String,
     desc: String,
     main: Option<bool>
@@ -44,6 +45,7 @@ pub async fn init_default(depot: &mut Depot) -> Result<Text<String>, Error> {
                                     },
                                     site: item.site.clone(),
                                     desc: item.desc.clone(),
+                                    status: item.status.clone(),
                                     main: item.main
                                 });
                             }

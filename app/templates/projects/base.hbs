@@ -11,7 +11,12 @@
                 {{else}}
                     <span class="logo">{{{this.logo}}}</span>
                 {{/if}}
-                <span class="title">{{this.title}}</span>
+                <span class="title">
+                    {{this.title}}
+                    {{#unless (eq this.status null)}}
+                        <span class="tag">{{this.status}}</span>
+                    {{/unless}}
+                </span>
                 <span class="desc">{{this.desc}}</span>
                 <span class="site"><a href="https://{{this.site}}" target="_blank">{{this.site}}</a><app-icon name="link"></app-icon></span>
             </div>
@@ -24,7 +29,12 @@
                 {{else}}
                     <span class="logo">{{{this.logo}}}</span>
                 {{/if}}
-                <span class="title">{{this.title}}</span>
+                <span class="title">
+                    {{this.title}}
+                    {{#unless (eq this.status null)}}
+                        <span class="tag">{{this.status}}</span>
+                    {{/unless}}
+                </span>
                 <span class="desc">{{this.desc}}</span>
                 <span class="site"><a href="https://{{this.site}}" target="_blank">{{this.site}}</a><app-icon name="link"></app-icon></span>
             </div>
