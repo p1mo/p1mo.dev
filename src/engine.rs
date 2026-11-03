@@ -2,6 +2,8 @@ use std::{collections::HashMap, sync::Arc};
 use handlebars::Handlebars;
 use uiicons::EmbededIcons;
 
+use crate::ServerKind;
+
 
 
 
@@ -16,6 +18,7 @@ impl<'a> Engine<'a> {
 
         let mut engine = Handlebars::new();
         engine.register_template_string("__INDEX__", include_str!("../temp/app/index.html"))?;
+        engine.register_template_string("__DOMAINS__", include_str!("../temp/app/domains.html"))?;
         for entry in &ufs::bind_dir!("app/templates") {
             let path = entry.path.display().to_string();
             if !path.starts_with("assets") && path.ends_with(".hbs") || path.ends_with(".html") && path.ends_with(".html") {
@@ -81,8 +84,12 @@ impl EngineDepotExt for salvo::Depot {
     where
         T: serde::Serialize
     {
+        let srkind = self.get_typed::<Arc<ServerKind>>().unwrap();
         let engine = self.get_typed::<ArcEngine>().unwrap();
-        let result = engine.0.render("__INDEX__", &data)?;
+        let result = engine.0.render(match srkind.as_ref() {
+            ServerKind::Parker => "__DOMAINS__",
+            ServerKind::Website => "__INDEX__",
+        }, &data)?;
         Ok(result)
     }
 

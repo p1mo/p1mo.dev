@@ -1,9 +1,12 @@
-<div class="history-h1">My History</div>
+<h1 class="history-h1">My History</h1>
 <div class="history-container">
     {{#each history}}
         {{#if this.space}}
         <div class="space">
             <div class="line"></div>
+            {{#if this.icon}}
+                {{{this.icon}}}
+            {{/if}}
             <span class="title">{{{this.title}}}</span>
             <span class="time">{{this.time}}</span>
             <span class="desc">{{{this.desc}}}</span>
@@ -11,6 +14,9 @@
         </div>
         {{else}}
         <div class="card">
+            {{#if this.icon}}
+                {{{this.icon}}}
+            {{/if}}
             <span class="title">{{{this.title}}}</span>
             <span class="time">{{this.time}}</span>
             <span class="desc">{{{this.desc}}}</span>

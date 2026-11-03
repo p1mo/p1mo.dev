@@ -1,43 +1,52 @@
 [
     [
         {
-            "title": "p1mo.dev",
-            "site" : "p1mo.dev",
-            "desc" : "Personal Portfolio (Martin Bus aka p1mo)",
-            "main" : true
+            "title"     : "p1mo.dev",
+            "site"      : "p1mo.dev",
+            "desc"      : "Personal Portfolio (Martin Bus aka p1mo)",
+            "main"      : true,
+            "online"    : true
         }
     ],
     [
         {
-            "title": "Vemox",
-            "logo" : "vemox",
-            "site" : "vemox.de",
-            "status": "soon online",
-            "desc" : "Responsible for managing and overseeing the following brands: blockz.dev, keoku.xyz, vexa.cx",
-            "main" : true
+            "title"     : "Vemox",
+            "logo"      : "vemox",
+            "site"      : "vemox.de",
+            "info"      : "11.2026",
+            "discord"   : "https://discord.gg/fvjXKUwv8v",
+            "desc"      : "Responsible for managing and overseeing the following brands: blockz.dev, keoku.xyz, vexa.cx",
+            "main"      : true,
+            "online"    : false
         }
     ],
     [
         {
-            "title": "BLOCKz",
-            "logo" : "block",
-            "site" : "blockz.dev",
-            "status": "soon online",
-            "desc" : "Tools, Services, IoT and Embedded focused."
+            "title"     : "BLOCKz",
+            "logo"      : "block",
+            "site"      : "blockz.dev",
+            "info"      : "12.2026",
+            "discord"   : "https://discord.gg/ht3z6qA7pT",
+            "desc"      : "Tools, Services, IoT and Embedded focused.",
+            "online"    : false
         },
         {
-            "title": "KEOKU",
-            "logo" : "keoku",
-            "site" : "keoku.xyz",
-            "status": "soon online",
-            "desc" : "RGPU Rendered UI & APP Framework"
+            "title"     : "KEOKU",
+            "logo"      : "keoku",
+            "site"      : "keoku.xyz",
+            "info"      : "02.2027",
+            "discord"   : "https://discord.gg/zxmP7FKh6k",
+            "desc"      : "GPU Rendered APP Framework & UI Components",
+            "online"    : false
         },
         {
-            "title": "VEXA",
-            "logo" : "vexa",
-            "site" : "vexa.cx",
-            "status": "soon online",
-            "desc" : "AI focused Services and Tools"
+            "title"     : "VEXA",
+            "logo"      : "vexa",
+            "site"      : "vexa.cx",
+            "info"      : "11.2026",
+            "discord"   : "https://discord.gg/EkTcj3kgmH",
+            "desc"      : "AI focused Services, Tools and Applications",
+            "online"    : false
         }
     ]
 ]

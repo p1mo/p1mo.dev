@@ -1,12 +1,22 @@
+use std::sync::Arc;
 
+use crate::Error;
 use salvo::prelude::*;
-use tokio::net::ToSocketAddrs;
+use tokio::{net::ToSocketAddrs, task::JoinHandle};
 
 
 
 
 
-pub async fn webserver(addr: impl ToSocketAddrs + Send + 'static, router: Router) -> Result<(), crate::Error> {
+#[derive(Debug, Clone)]
+pub enum ServerKind {
+    Parker,
+    Website
+}
+
+
+
+pub async fn webserver(kind: ServerKind, addr: impl ToSocketAddrs + Send + 'static, router: Router) -> Result<(), crate::Error> {
 
     let acceptor = TcpListener::new(addr).bind().await;
     let server = Server::new(acceptor);
@@ -45,12 +55,32 @@ pub async fn webserver(addr: impl ToSocketAddrs + Send + 'static, router: Router
 
     });
 
+    let router = {
+        Router::new()
+            .hoop(CatchPanic::new())
+            .hoop(affix_state::inject(Arc::new(kind.clone())))
+            .push(router)
+    };
+
     server.serve({
-
-        Service::new(Router::new().hoop(CatchPanic::new()).push(router)).catcher(crate::routes::init_catcher()?)
-
+        Service::new(router).catcher(crate::routes::init_catcher(kind)?)
     }).await;
 
     Ok(())
 
+}
+
+
+
+pub type OptinalJoinHandle = Option<JoinHandle<Result<(), Error>>>;
+
+
+
+pub async fn optional_task(
+    task: OptinalJoinHandle,
+) -> Result<Option<()>, Error> {
+    match task {
+        Some(handle) => Ok(Some(handle.await??)),
+        None => Ok(None),
+    }
 }

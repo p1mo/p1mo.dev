@@ -1,4 +1,4 @@
-<div class="history-h1">My Projects</div>
+<h1 class="history-h1">My Projects</h1>
 <div class="project-container">
 {{#each projects}}
     {{#each this}}
@@ -6,37 +6,59 @@
             <div class="main">
                 {{#if (eq this.logo null)}}
                     <span class="logo">
-                        <app-icon name="globe"></app-icon>
+                        <app-icon name="portfolio"></app-icon>
                     </span>
                 {{else}}
                     <span class="logo">{{{this.logo}}}</span>
                 {{/if}}
                 <span class="title">
                     {{this.title}}
-                    {{#unless (eq this.status null)}}
-                        <span class="tag">{{this.status}}</span>
+                    {{#unless (eq this.info null)}}
+                        <span class="tag">{{this.info}}</span>
                     {{/unless}}
                 </span>
                 <span class="desc">{{this.desc}}</span>
-                <span class="site"><a href="https://{{this.site}}" target="_blank">{{this.site}}</a><app-icon name="link"></app-icon></span>
+                <span class="site">
+                    {{#if this.online}}
+                        {{#if this.site}}
+                            <a href="https://{{this.site}}" target="_blank"><app-icon name="globe"></app-icon></a>
+                        {{/if}}
+                        {{#if this.discord}}
+                            <a href="https://{{this.discord}}" target="_blank"><app-icon name="discord-brand"></app-icon></a>
+                        {{/if}}
+                    {{else}}
+                        <span class="info">OFFLINE</span>
+                    {{/if}}
+                </span>
             </div>
         {{else}}
             <div class="sub">
                 {{#if (eq this.logo null)}}
                     <span class="logo">
-                        <app-icon name="globe"></app-icon>
+                        <app-icon name="portfolio"></app-icon>
                     </span>
                 {{else}}
                     <span class="logo">{{{this.logo}}}</span>
                 {{/if}}
                 <span class="title">
                     {{this.title}}
-                    {{#unless (eq this.status null)}}
-                        <span class="tag">{{this.status}}</span>
+                    {{#unless (eq this.info null)}}
+                        <span class="tag">{{this.info}}</span>
                     {{/unless}}
                 </span>
                 <span class="desc">{{this.desc}}</span>
-                <span class="site"><a href="https://{{this.site}}" target="_blank">{{this.site}}</a><app-icon name="link"></app-icon></span>
+                <span class="site">
+                    {{#if this.online}}
+                        {{#if this.site}}
+                            <a href="https://{{this.site}}" target="_blank"><app-icon name="globe"></app-icon></a>
+                        {{/if}}
+                        {{#if this.discord}}
+                            <a href="https://{{this.discord}}" target="_blank"><app-icon name="discord-brand"></app-icon></a>
+                        {{/if}}
+                    {{else}}
+                        <span class="info">OFFLINE</span>
+                    {{/if}}
+                </span>
             </div>
         {{/if}}
     {{/each}}

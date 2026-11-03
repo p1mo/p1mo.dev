@@ -11,22 +11,52 @@
 
 
 
-html, body {
-  touch-action: pan-x pan-y;   /* blocks pinch-zoom & double-tap zoom */
-  -webkit-text-size-adjust: 100%; /* stops iOS auto text inflation */
+
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary) var(--background-2);
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--background-2);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--secondary);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary);
+}
+
+
+
+
+
+
+html {
+  touch-action: pan-x pan-y;
+  -webkit-text-size-adjust: 100%;
   overscroll-behavior: none;
 }
 
-
-
-
-
-
-
 body {
   @apply flex justify-center flex-wrap w-screen min-h-screen;
-  @apply bg-(--background-0) text-(--text);
+  @apply overflow-x-hidden bg-(--background-0) text-(--text);
 }
+
+
+
+
+
 
 
 .center {
@@ -66,8 +96,8 @@ header nav {
 }
 
 header nav a {
-  @apply flex justify-center items-center mx-4 lg:mx-10 my-10;
-  @apply text-sm font-semibold hover:text-(--primary);
+  @apply flex justify-center items-center mx-10 lg:mx-10 my-10;
+  @apply text-xl lg:text-sm font-semibold hover:text-(--primary);
 }
 
 header .email {
@@ -98,14 +128,15 @@ main {
 
 
 footer {
-  @apply flex justify-center items-center w-screen h-10;
+  @apply flex justify-center items-center w-screen h-20;
   @apply text-sm font-semibold text-(--background-3);
 }
 
 footer .center {
-  @apply justify-center items-center;
+  @apply flex flex-col justify-center items-center w-full;
 }
 
-footer .center app-icon {
-  @apply w-5 h-5;
+footer .center p,
+footer .center .copy {
+  @apply inline-flex leading-8 text-(--secondary);
 }

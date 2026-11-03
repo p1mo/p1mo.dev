@@ -19,19 +19,19 @@
 }
 
 .history-container .card{
-    @apply ml-0 lg:ml-[50%] mr-0;
+    @apply ml-0 lg:ml-[52.5%] mr-0 lg:mr-[2.5%];
 }
 
 .history-container .card:nth-child(odd) {
-    @apply mr-0 lg:mr-[50%] ml-0;
+    @apply mr-0 lg:mr-[52.5%] ml-0 lg:ml-[2.5%];
 }
 
 
 
 
 .history-container .card {
-    @apply flex flex-col justify-center items-center w-[90%] lg:w-[50%] min-h-52;
-    @apply bg-(--background-2) rounded-xl;
+    @apply flex flex-col justify-center items-center w-[90%] lg:w-[45%] min-h-52 p-1;
+    @apply bg-(--background-1) rounded-xl drop-shadow-md;
 }
 
 .history-container .card .title {
@@ -59,6 +59,10 @@
 .history-container .space {
     @apply flex flex-col justify-center items-center w-[50%] min-h-52 mx-auto my-20;
     @apply text-(--secondary);
+}
+
+.history-container .space app-icon {
+    @apply w-16 h-16 mt-5 mb-1;
 }
 
 .history-container .space .title {

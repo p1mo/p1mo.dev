@@ -1,5 +1,6 @@
-use crate::{Error, EngineDepotExt};
+use std::sync::Arc;
 
+use crate::{EngineDepotExt, Error, Engine, ServerKind};
 
 use salvo::prelude::*;
 
@@ -11,35 +12,64 @@ async fn catch_all(&self, req: &Request, depot: &Depot, res: &mut Response, ctrl
     let path = req.uri().path();
     let method = req.method().as_str();
 
-    let string = if let Some(status) = res.status_code {
-        serde_json::json!({
-            "code": status.as_str(),
-            "text": status.canonical_reason(),
-            "desc": format!("[{}] {}", method, path)
-        })
-    } else {
-        serde_json::json!({
-            "code": "000",
-            "text": "unimplemented error",
-            "desc": format!("[{}] {}", method, path)
-        })
-    };
+    let engine = depot.get_typed::<Arc<ServerKind>>().unwrap();
 
-    let template = depot.template("errors.hbs", string)?;
+    Ok(match engine.as_ref() {
+        ServerKind::Parker => {
 
-    ctrl.skip_rest();
+            ctrl.skip_rest();
 
-    Ok(Text::Html(depot.index(&serde_json::json!({
-        "content": template,
-        "version": format!("v{}", env!("CARGO_PKG_VERSION")),
-    }))?))
+            Text::Html(
+                depot.index(&serde_json::json!({
+                    "version": format!("v{}", env!("CARGO_PKG_VERSION")),
+                }))?
+            )
+
+        },
+        ServerKind::Website => {
+
+            let template = depot.template("errors.hbs", if let Some(status) = res.status_code {
+                serde_json::json!({
+                    "code": status.as_str(),
+                    "text": status.canonical_reason(),
+                    "desc": format!("[{}] {}", method, path)
+                })
+            } else {
+                serde_json::json!({
+                    "code": "000",
+                    "text": "unimplemented error",
+                    "desc": format!("[{}] {}", method, path)
+                })
+            })?;
+
+            ctrl.skip_rest();
+
+            Text::Html(
+                depot.index(&serde_json::json!({
+                    "content": template,
+                    "version": format!("v{}", env!("CARGO_PKG_VERSION")),
+                }))?
+            )
+
+        },
+    })
+
 
 }
 
 
 
-pub fn init_catcher() -> Result<salvo::catcher::Catcher, Error> {
-    Ok(salvo::catcher::Catcher::default()
-        .hoop(affix_state::inject(crate::Engine::default()?))
-        .hoop(catch_all))
+
+
+
+
+
+
+pub fn init_catcher(kind: ServerKind) -> Result<salvo::catcher::Catcher, Error> {
+    Ok(
+        salvo::catcher::Catcher::default()
+            .hoop(affix_state::inject(Engine::default()?))
+            .hoop(affix_state::inject(Arc::new(kind)))
+            .hoop(catch_all)
+    )
 }

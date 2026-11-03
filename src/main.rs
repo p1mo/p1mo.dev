@@ -7,12 +7,14 @@ mod skills;
 mod logger;
 
 mod jsondb;
-
-
+mod parker;
 
 pub use engine::ArcEngine;
 pub use engine::Engine;
 pub use engine::EngineDepotExt;
+
+pub use server::webserver;
+pub use server::ServerKind;
 
 pub use skills::Language;
 
@@ -29,6 +31,7 @@ use salvo::prelude::*;
 
 
 
+
 #[tokio::main(flavor = "multi_thread")]
 async fn main() -> anyhow::Result<()> {
 
@@ -38,13 +41,34 @@ async fn main() -> anyhow::Result<()> {
 
     let conf = config::load_config(std::env::var("P1MO_CONFIG").unwrap_or("config.json".to_string()))?;
 
-    server::webserver(format!("{}:{}", conf.host, conf.port), {
-        Router::new()
-            .hoop(CatchPanic::new())
-            .hoop(affix_state::inject(Engine::default()?))
-            .hoop(affix_state::inject(jsondb::JsonDB::new()))
-            .push(routes::router())
-    }).await?;
+
+    let website = tokio::spawn({
+        webserver(ServerKind::Website, format!("{}:{}", conf.host, conf.port), {
+            Router::new()
+                .hoop(affix_state::inject(Engine::default()?))
+                .hoop(affix_state::inject(jsondb::JsonDB::new()))
+                .push(routes::router())
+        })
+    });
+
+    let parker_join = match conf.parker {
+        Some(park) => {
+            Some(tokio::spawn({
+                webserver(ServerKind::Parker, format!("{}:{}", park.host, park.port), {
+                    Router::new()
+                        .hoop(affix_state::inject(Engine::default()?))
+                        .hoop(affix_state::inject(jsondb::JsonDB::new()))
+                        .push(parker::router())
+                })
+            }))
+        },
+        None => None,
+    };
+
+    let (wres, pres) = tokio::join!(website, server::optional_task(parker_join));
+
+    tracing::info!("webserver: {:?}", wres??);
+    tracing::info!("parking:   {:?}", pres?);
 
     Ok(())
 
@@ -80,6 +104,8 @@ pub enum Error {
     UfsError(#[from] ufs::Error),
     #[error(transparent)]
     SalvoError(#[from] salvo::Error),
+    #[error(transparent)]
+    Join(#[from] tokio::task::JoinError),
 
     #[error("{0}")]
     Other(String),
