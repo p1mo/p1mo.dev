@@ -43,6 +43,18 @@
       "source": "phosphor",
       "icon": "eye"
     },
+    "game-controller": {
+      "source": "phosphor",
+      "icon": "game-controller"
+    },
+    "portfolio": {
+      "source": "phosphor",
+      "icon": "browser"
+    },
+    "student": {
+      "source": "phosphor",
+      "icon": "student"
+    },
 
 
 
@@ -57,6 +69,14 @@
     "crate-brand": {
       "source": "phosphor",
       "icon": "package"
+    },
+    "discord-brand": {
+      "source": "simpleicons",
+      "icon": "discord"
+    },
+    "steam-brand": {
+      "source": "simpleicons",
+      "icon": "steam"
     },
 
 

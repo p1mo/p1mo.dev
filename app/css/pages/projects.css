@@ -6,7 +6,7 @@
 
 
 .project-container {
-    @apply flex flex-row flex-wrap justify-around items-center w-full h-auto gap-10 lg:gap-20 mb-20;
+    @apply flex flex-row flex-wrap justify-around items-center w-full h-auto gap-5 px-3 lg:gap-20 mb-20;
 }
 
 
@@ -14,7 +14,7 @@
 
 
 .project-container .main {
-    @apply flex flex-col w-[50%] mx-[25%] h-auto;
+    @apply flex flex-col w-[60%] lg:w-[50%] mx-[20%] lg:mx-[25%] h-auto drop-shadow-md;
     @apply bg-(--background-1) hover:bg-(--background-2) rounded-xl border-b-2 border-(--secondary) transition-colors;
 }
 
@@ -23,11 +23,11 @@
 }
 
 .project-container .main .logo svg {
-    @apply w-10 h-10;
+    @apply w-12 h-12;
 }
 
 .project-container .main .logo app-icon {
-    @apply inline w-10 h-10 text-(--background-3);
+    @apply inline w-12 h-12 text-(--background-3);
 }
 
 .project-container .main .logo app-icon svg {
@@ -40,8 +40,8 @@
 }
 
 .project-container .main .title .tag {
-    @apply inline-flex justify-center items-center py-1 px-3 mx-2;
-    @apply text-xs font-semibold bg-(--secondary) text-(--background-1) rounded-md;
+    @apply inline-flex justify-center items-center py-px px-1 mx-4;
+    @apply text-[12px] font-bold bg-(--secondary) text-(--background-1) rounded-sm;
 }
 
 .project-container .main .desc {
@@ -50,11 +50,16 @@
 
 .project-container .main .site {
     @apply flex justify-center items-center w-full h-20;
-    @apply text-sm font-normal text-(--primary);
+}
+
+.project-container .main .site .info {
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-sm font-semibold text-(--secondary);
 }
 
 .project-container .main .site app-icon {
-    @apply inline-flex justify-center items-center w-4 h-4 text-(--primary) ml-1;
+    @apply inline-flex justify-center items-center w-7 h-7 mx-1;
+    @apply text-(--primary) hover:text-(--secondary) transition-colors;
 }
 
 
@@ -64,7 +69,7 @@
 
 
 .project-container .sub {
-    @apply flex flex-col w-[25%] h-auto;
+    @apply flex flex-col w-[30%] lg:w-[25%] h-full drop-shadow-md;
     @apply bg-(--background-1) hover:bg-(--background-2) rounded-xl border-b-2 border-(--secondary) transition-colors;
 }
 
@@ -73,7 +78,7 @@
 }
 
 .project-container .sub .logo svg {
-    @apply w-10 h-10;
+    @apply w-12 h-12;
 }
 
 .project-container .sub .logo app-icon {
@@ -85,22 +90,26 @@
 }
 
 .project-container .sub .title {
-    @apply flex justify-center items-center w-full h-20;
+    @apply flex flex-col lg:flex-row justify-center items-center w-full h-20;
     @apply text-lg font-semibold text-(--primary);
 }
 
 .project-container .sub .title .tag {
-    @apply inline-flex justify-center items-center py-1 px-3 mx-2;
-    @apply text-xs font-semibold bg-(--secondary) text-(--background-1) rounded-md;
+    @apply inline-flex justify-center items-center py-px px-1 mx-4;
+    @apply text-[12px] font-bold bg-(--secondary) text-(--background-1) rounded-sm;
 }
 
 .project-container .sub .desc {
-    @apply hidden lg:block text-center whitespace-break-spaces p-4;
+    @apply block text-center whitespace-break-spaces p-4;
 }
 
 .project-container .sub .site {
     @apply flex justify-center items-center w-full h-20;
-    @apply text-sm font-normal text-(--primary);
+}
+
+.project-container .sub .site .info {
+    @apply flex justify-center items-center w-full h-20;
+    @apply text-sm font-semibold text-(--secondary);
 }
 
 .project-container .sub .site app-icon {

@@ -42,12 +42,12 @@
 }
 
 .home-container .heading .info .socials {
-    @apply flex justify-center items-center w-full min-h-20 gap-5;
+    @apply flex justify-center items-center w-full min-h-20 gap-2 lg:gap-5;
 }
 
 .home-container .heading .info .socials a {
-    @apply inline-flex flex-col justify-center items-center w-[calc(100%/3-20px)] min-h-20 rounded-xl;
-    @apply bg-(--background-1) hover:bg-(--background-2) text-sm text-(--secondary) transition-colors;
+    @apply inline-flex flex-col justify-center items-center w-[calc(100%/4-10px)] min-h-20 rounded-xl;
+    @apply bg-(--background-1) hover:bg-(--background-2) text-sm text-(--secondary) drop-shadow-md transition-colors;
 }
 
 .home-container .heading .info .socials a app-icon {
@@ -55,13 +55,8 @@
 }
 
 .home-container .heading .image {
-    @apply hidden lg:flex justify-center items-center w-[50%] min-h-100;
+    @apply hidden lg:flex justify-center items-center w-[50%] min-h-100 text-(--primary);
 }
-
-.home-container .heading .image picture {
-    @apply w-100 h-100;
-}
-
 
 
 
@@ -83,7 +78,7 @@
 
 .home-container .skill-list .items .item {
     @apply flex flex-col justify-center items-center w-auto h-30 rounded-xl;
-    @apply bg-(--background-1) hover:bg-(--background-2) transition-colors;
+    @apply bg-(--background-1) hover:bg-(--background-2) drop-shadow-md transition-colors;
 }
 
 .home-container .skill-list .items .item.selected {
@@ -102,7 +97,7 @@
 .home-container .skill-list .console {
     font-family: var(--robo-mono);
     @apply flex justify-center items-center text-center w-full min-h-50 p-3 px-20 mt-5;
-    @apply text-base font-semibold text-(--secondary) bg-(--background-1) rounded-xl;
+    @apply text-base font-semibold text-(--secondary) bg-(--background-1) drop-shadow-md rounded-xl;
 }
 
 

@@ -10,7 +10,7 @@ use crate::{Error, EngineDepotExt, JsonDBDepotExt, Language};
 use salvo::prelude::*;
 
 #[handler]
-async fn assets_endpoint(req: &mut Request, depot: &mut Depot, res: &mut Response) -> Result<(), Error> {
+pub async fn assets_endpoint(req: &mut Request, depot: &mut Depot, res: &mut Response) -> Result<(), Error> {
     let path = req.uri().path().strip_prefix("/").unwrap();
     if let Some(mime) = mime_guess::from_path(path).first() {
         res.add_header("Content-Type", mime.essence_str(), true)?;
@@ -19,7 +19,7 @@ async fn assets_endpoint(req: &mut Request, depot: &mut Depot, res: &mut Respons
 }
 
 #[handler]
-async fn icons_endpoint(req: &mut Request, depot: &mut Depot, res: &mut Response) -> Result<(), Error> {
+pub async fn icons_endpoint(req: &mut Request, depot: &mut Depot, res: &mut Response) -> Result<(), Error> {
     let path = req.uri().path().strip_prefix("/").unwrap();
     if let Some(mime) = mime_guess::from_path(path).first() {
         res.add_header("Content-Type", mime.essence_str(), true)?;
@@ -47,13 +47,27 @@ async fn skill_finder(req: &mut Request, depot: &mut Depot, res: &mut Response) 
 
 pub fn router() -> Router {
     Router::new()
-        .push(Router::with_path("icons/{filename}").get(icons_endpoint))
-        .push(Router::with_path("assets/{filename}").get(assets_endpoint))
-        .push(Router::with_path("static/{filename}").get(assets_endpoint))
-
-        .push(Router::with_path("skill/{id}").get(skill_finder))
-
-        .push(Router::new().get(home::init_default))
-        .push(Router::with_path("history").get(history::init_default))
-        .push(Router::with_path("projects").get(projects::init_default))
+        // ASSETS gzip Compressed
+        .push({
+            Router::with_hoop(Compression::new().enable_gzip(CompressionLevel::Minsize))
+                .push(Router::with_path("assets/{filename}").get(assets_endpoint))
+                .push(Router::with_path("static/{filename}").get(assets_endpoint))
+        })
+        // ASSETS no Compression
+        .push({
+            Router::new()
+                .push(Router::with_path("icons/{filename}").get(icons_endpoint))
+        })
+        // Rest API
+        .push({
+            Router::new()
+                .push(Router::with_path("skill/{id}").get(skill_finder))
+        })
+        // Website Routes
+        .push({
+            Router::with_hoop(Compression::new().enable_gzip(CompressionLevel::Minsize))
+                .push(Router::new().get(home::init_default))
+                .push(Router::with_path("history").get(history::init_default))
+                .push(Router::with_path("projects").get(projects::init_default))
+        })
 }

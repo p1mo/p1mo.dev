@@ -13,6 +13,7 @@ struct History {
     title: String,
     time: String,
     desc: String,
+    icon: Option<String>,
     space: Option<bool>
 }
 

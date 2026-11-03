@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@import "./fonts.css";
+@import "./default.css";
+
+html {
+  touch-action: pan-x pan-y;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  @apply flex flex-col justify-center items-center w-screen h-screen;
+  @apply overflow-hidden bg-(--background-0) text-(--text);
+}
+
+main {
+  @apply flex flex-col justify-center items-center w-screen h-screen select-none;
+}
+
+.info {
+  @apply flex flex-col justify-center items-center w-screen min-h-40;
+    @apply bg-(--background-2) drop-shadow-md;
+}
+
+.info h1 {
+  font-family: var(--bungee);
+  @apply flex justify-center items-center w-screen h-20;
+  @apply text-3xl font-semibold text-(--primary);
+}
+
+.info h2 {
+  font-family: var(--robo-mono);
+  @apply flex justify-center items-center w-screen h-20;
+  @apply text-lg font-semibold text-(--secondary);
+}
+
+.info h2 a {
+  @apply mx-1 underline hover:text-(--primary) transition-colors;
+}
+
+.domain {
+  @apply flex flex-col justify-center items-center w-screen h-30 mx-30;
+  @apply text-7xl font-semibold;
+}
